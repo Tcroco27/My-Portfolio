@@ -13,9 +13,20 @@
     float: none; /* Remove float for smaller screens */
     width: 100%; /* Make images full-width on smaller screens */
     margin: 5px 0; /* Adjust margin as needed */
-    position: static; /* Remove relative positioning for smaller screens */
+  }
+
+  /* Adjust the positioning of the absolute images */
+  #navi {
+    position: relative;
+  }
+
+  #navi img {
+    position: static; /* Change absolute to static for smaller screens */
+    top: auto;
+    left: auto;
   }
 }
+
 
 
 
