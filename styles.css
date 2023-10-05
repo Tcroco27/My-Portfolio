@@ -1,3 +1,24 @@
+/* Add this CSS for smaller screens */
+@media (max-width: 768px) {
+  header {
+    background-size: cover;
+    height: 200px;
+  }
+
+  main {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  #i, #o {
+    float: none; /* Remove float for smaller screens */
+    width: 100%; /* Make images full-width on smaller screens */
+    margin: 5px 0; /* Adjust margin as needed */
+  }
+}
+
+
+
+
 body {
   background-color: #b6b6b6fa;
   font-family: Arial, sans-serif;
