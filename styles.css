@@ -1,8 +1,7 @@
 @media (max-width: 768px) {
   #Coverpic {
     background-size: cover;
-    
-    background-position: center;
+    background-position: bottom;
   }
 
   #navi a {
