@@ -1,3 +1,15 @@
+@media (max-width: 768px) {
+  #Coverpic {
+    background-size: cover;
+    min-height: 200px;
+    background-position: center;
+  }
+  
+  #navi a {
+    margin-top: none;
+    margin-bottom: none;
+  }
+}
 
 body {
   background-color: #9a9a9a;
@@ -7,7 +19,7 @@ body {
 
 #Coverpic {
   background-image: url(Data/Coverpic.jpg);
-  background-size:contain;
+  background-size: contain;
   border-radius: 15px;
 
 }
@@ -22,19 +34,19 @@ body {
   border-radius: 15px;
   margin-right: 10px;
   margin-top: 100px;
-  margin-bottom: 120px ;
+  margin-bottom: 120px;
 }
 
 #navi a:hover {
   background-color: #05196c97;
 }
 
-#Tarek{
+#Tarek {
   font-size: 50px;
 }
 
 h2 {
-  background-color: #0808083e;  
+  background-color: #0808083e;
   border-radius: 5px
 }
 
@@ -66,7 +78,7 @@ footer {
   background-color: #333;
   padding: 10px;
   text-align: center;
-  border-radius: 15px; 
+  border-radius: 15px;
 }
 
 footer p {
@@ -82,7 +94,7 @@ footer p {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  
+
 }
 
 #i {
@@ -106,33 +118,32 @@ footer p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#PP{
+#PP {
   margin: 10px;
   float: right;
 }
 
-#Theh2{
+#Theh2 {
   margin-top: 130px;
 
 }
 
-#Maintext{
-  font-size: 21px ;
-  
+#Maintext {
+  font-size: 21px;
+
 }
 
-#GT{
+#GT {
   font-size: 20px;
   background-color: #08080825;
   border-radius: 5px
-
 }
 
-#GDP{
+#GDP {
   font-size: 25px;
 }
 
 
-#MOP{
+#MOP {
   font-size: 23px;
 }
