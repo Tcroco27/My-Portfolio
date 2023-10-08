@@ -7,7 +7,9 @@ body {
 
 #Coverpic {
   background-image: url(Data/Coverpic.jpg);
-  background-size:contain;
+  width: fit-content;
+  height: fit-content;
+
 }
 
 #navi a {
@@ -100,7 +102,6 @@ footer p {
   margin-left: 500px;
   margin-right: auto;
   margin-top: -133px;
-  width: 10%;
 }
 
 #PP{
