@@ -1,12 +1,7 @@
 @media (max-width: 768px) {
   #Coverpic {
-    
-    background-position: bottom;
-  }
-
-  #navi a {
-    margin-top: none;
-    margin-bottom: none;
+    background-position: center;
+    max-height: 167px;
   }
 }
 
@@ -78,10 +73,6 @@ footer {
   padding: 10px;
   text-align: center;
   border-radius: 15px;
-}
-
-footer p {
-
   color: #fff;
   font-size: 14px;
   margin: 30;
