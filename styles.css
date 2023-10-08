@@ -7,7 +7,6 @@ body {
 
 #Coverpic {
   background-image: url(Data/Coverpic.jpg);
-  height: 200px;
   background-size:contain;
 }
 
