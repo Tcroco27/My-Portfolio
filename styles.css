@@ -57,6 +57,7 @@ footer {
   background-color: #333;
   padding: 10px;
   text-align: center;
+  border-radius: 15px; 
 }
 
 footer p {
@@ -101,6 +102,22 @@ footer p {
   margin-right: auto;
   margin-top: -133px;
   width: 10%;
+}
+
+#PP{
+  margin: 10px;
+ 
+  float: right;
+}
+
+#Theh2{
+  margin-top: 130px;
+
+}
+
+#Maintext{
+  font-size: 21px ;
+  
 }
 
 
