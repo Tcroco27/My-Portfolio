@@ -1,10 +1,10 @@
 @media (max-width: 768px) {
   #Coverpic {
     background-size: cover;
-    min-height: 200px;
+    min-height: 100px;
     background-position: center;
   }
-  
+
   #navi a {
     margin-top: none;
     margin-bottom: none;
