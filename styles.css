@@ -18,6 +18,12 @@ body {
 
 }
 
+#navi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #navi a {
 
   display: inline-block;
@@ -26,7 +32,7 @@ body {
   color: #fff;
   text-decoration: none;
   border-radius: 15px;
-  margin-right: 10px;
+  margin-right: 100px;
   margin-top: 100px;
   margin-bottom: 120px;
 }
@@ -87,6 +93,10 @@ footer {
 
 }
 
+#g {
+  font-size: 18px;
+}
+
 #i {
   float: left;
   margin-right: 10px;
@@ -108,9 +118,18 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#PP {
-  margin: 10px;
+#CV{
+  font-size: 50px;
+}
+
+#cvp{
+  font-size: 20px;
+  color: rgb(117, 6, 6);
+}
+
+#PP img{
   float: right;
+    margin-bottom: 20px;
 }
 
 #Theh2 {
@@ -120,6 +139,7 @@ footer {
 
 #Maintext {
   font-size: 21px;
+  margin-bottom: 70px;
 
 }
 
