@@ -54,6 +54,8 @@ h2, h3, h4, h5 {
 }
 
 main {
+  display: flex; /* Use flexbox for the main content area */
+  flex-direction: column; /* Keep content stacked vertically by default */
   padding: 20px;
   max-width: 900px;
   margin: auto;
