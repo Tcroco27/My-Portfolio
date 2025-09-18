@@ -140,7 +140,7 @@ footer {
 }
 
 /* --- DESKTOP STYLES (Min-width: 768px) --- */
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   /* Navigation */
   #navi {
     flex-direction: row; /* Horizontal navigation */
