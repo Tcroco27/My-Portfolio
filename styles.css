@@ -1,38 +1,40 @@
+@media (max-width: 768px) {
+  #Coverpic {
+    background-position: center;
+    max-height: 130px;
+  }
+}
+
 body {
   background-color: #9a9a9a;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
 }
+
 
 #Coverpic {
   background-image: url(Data/Coverpic.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: contain;
   border-radius: 15px;
-  min-height: 200px;
-  width: 100%;
+
 }
 
 #navi {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px 0;
 }
 
 #navi a {
-  display: block;
-  width: 80%;
-  max-width: 200px;
-  padding: 15px 0;
+
+  display: inline-block;
+  padding: 15px 30px;
   background-color: #333;
   color: #fff;
   text-decoration: none;
   border-radius: 15px;
-  text-align: center;
-  margin: 10px 0;
+  margin-right: 100px;
+  margin-top: 100px;
+  margin-bottom: 120px;
 }
 
 #navi a:hover {
@@ -40,44 +42,52 @@ body {
 }
 
 #Tarek {
-  font-size: 3em;
-  text-align: center;
-  margin-top: 20px;
+  font-size: 50px;
 }
 
-h2, h3, h4, h5 {
+h2 {
   background-color: #0808083e;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 20px;
-  text-align: center;
+  border-radius: 5px
+}
+
+h3 {
+  background-color: #0808083e;
+  border-radius: 5px
+}
+
+h4 {
+  background-color: #0808083e;
+  border-radius: 5px
+}
+
+h5 {
+  background-color: #0808083e;
+  border-radius: 5px
 }
 
 main {
   padding: 20px;
-  max-width: 900px;
-  margin: auto;
 }
 
 #g {
   background-color: #9a9a9a;
-  border-radius: 5px;
+  border-radius: 5px
 }
 
 #g2 {
   background-color: #9a9a9a;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 30px;
 }
 
 footer {
   background-color: #333;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   border-radius: 15px;
   color: #fff;
-  font-size: 0.9em;
-  margin-top: 20px;
+  font-size: 14px;
+  margin: 30;
 }
 
 #c {
@@ -86,118 +96,70 @@ footer {
   align-items: center;
   flex-direction: column;
   text-align: center;
+
 }
 
 #g {
-  font-size: 1em;
+  font-size: 18px;
 }
 
 #i {
-  float: none;
-  display: block;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 150px;
-  height: auto;
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 150px;
+  height: 100px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #o {
-  float: none;
-  display: block;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 200px;
+  height: 150px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#CV {
-  font-size: 2em;
-  display: block;
-  text-align: center;
+#CV{
+  font-size: 50px;
 }
 
-#cvp {
-  font-size: 1em;
+#cvp{
+  font-size: 20px;
   color: rgb(117, 6, 6);
-  text-align: center;
-  margin: 10px 0;
 }
 
-#PP img {
-  float: none;
-  display: block;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 210px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+#PP img{
+  float: right;
+    margin-bottom: 20px;
 }
 
 #Theh2 {
-  margin-top: 20px;
+  margin-top: 130px;
+
 }
 
 #Maintext {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  font-size: 21px;
+  margin-bottom: 70px;
+
 }
 
 #GT {
-  font-size: 1em;
+  font-size: 20px;
   background-color: #08080825;
-  border-radius: 5px;
+  border-radius: 5px
 }
 
 #GDP {
-  font-size: 1.2em;
+  font-size: 25px;
 }
+
 
 #MOP {
-  font-size: 1.2em;
-}
-
-@media (min-width: 768px) {
-  #navi {
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 120px;
-  }
-  #navi a {
-    display: inline-block;
-    width: auto;
-    padding: 15px 30px;
-    margin: 0 20px;
-  }
-  #Tarek {
-    font-size: 50px;
-    text-align: left;
-  }
-  #PP img {
-    float: right;
-    margin-left: 20px;
-    width: 210px;
-    height: 260px;
-  }
-  #Theh2 {
-    margin-top: 130px;
-  }
-  #Maintext {
-    font-size: 21px;
-    margin-bottom: 70px;
-  }
-  #CV {
-    font-size: 50px;
-  }
-  #cvp {
-    font-size: 20px;
-  }
-  h2, h3, h4, h5 {
-    text-align: left;
-  }
+  font-size: 23px;
 }
