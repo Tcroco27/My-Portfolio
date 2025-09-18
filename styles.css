@@ -1,3 +1,4 @@
+/* General Body and Layout */
 body {
   background-color: #9a9a9a;
   font-family: Arial, sans-serif;
@@ -7,17 +8,18 @@ body {
 
 #Coverpic {
   background-image: url(Data/Coverpic.jpg);
-  background-size: cover;
+  background-size: cover; /* Cover the entire area */
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 15px;
-  min-height: 200px;
+  min-height: 200px; /* Minimum height for cover image */
   width: 100%;
 }
 
+/* Navigation */
 #navi {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack vertically on mobile */
   align-items: center;
   padding: 20px 0;
 }
@@ -39,39 +41,96 @@ body {
   background-color: #05196c97;
 }
 
-#Tarek {
-  font-size: 3em;
-  text-align: center;
-  margin-top: 20px;
+/* Main Content Area */
+main {
+  padding: 20px;
+  max-width: 900px; /* Limit content width on large screens */
+  margin: 20px auto; /* Center content horizontally */
 }
 
-h2, h3, h4, h5 {
+/* Headings */
+#Tarek {
+  font-size: 3em; /* Responsive font size */
+  text-align: center;
+  margin-top: 20px;
   background-color: #0808083e;
   border-radius: 5px;
   padding: 10px;
-  margin-top: 20px;
+}
+
+h2, h3, h4, h5 { /* Grouped for consistent styling */
+  background-color: #0808083e;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 30px; /* More space above sections */
+  margin-bottom: 15px;
+  text-align: center; /* Center on mobile */
+}
+
+/* Profile Picture & Main Text Section (Mobile-first) */
+.profile-content {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically on mobile */
+    align-items: center; /* Center items */
+    gap: 20px; /* Space between items */
+    margin-top: 30px;
+    background-color: #ffffff1a; /* Light background for the section */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#PP img {
+  width: 100%; /* Make image fluid */
+  max-width: 210px; /* Limit max size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#Maintext {
+  font-size: 1.1em; /* Slightly larger for readability */
+  line-height: 1.6; /* Improved line spacing */
+  text-align: justify; /* Justify text for a cleaner block */
+}
+
+/* Resume Links */
+#cvp {
+  font-size: 1em;
+  color: rgb(117, 6, 6);
   text-align: center;
+  margin: 20px 0 5px; /* Spacing for resume text */
 }
 
-main {
-  display: flex; /* Use flexbox for the main content area */
-  flex-direction: column; /* Keep content stacked vertically by default */
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+#CV {
+  font-size: 2em;
+  display: block; /* Make it a block element to center */
+  text-align: center;
+  margin-bottom: 30px; /* Space after the CV link */
+  color: #007bff; /* A nice link color */
+  text-decoration: underline;
+}
+#CV:hover {
+    color: #0056b3;
 }
 
-#g {
-  background-color: #9a9a9a;
-  border-radius: 5px;
+
+/* Tech Stack & Awards List Items */
+main ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin-top: 10px;
 }
 
-#g2 {
-  background-color: #9a9a9a;
-  border-radius: 5px;
-  font-size: 1.5em;
+main ul li {
+    background-color: #ffffff0f;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 8px; /* Space between list items */
+    font-size: 1.1em;
+    color: #eee;
 }
 
+/* Footer */
 footer {
   background-color: #333;
   padding: 20px;
@@ -79,93 +138,14 @@ footer {
   border-radius: 15px;
   color: #fff;
   font-size: 0.9em;
-  margin-top: 20px;
+  margin-top: 40px; /* More space before footer */
 }
 
-#c {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-#g {
-  font-size: 1em;
-}
-
-#i {
-  float: none;
-  display: block;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#o {
-  float: none;
-  display: block;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#CV {
-  font-size: 2em;
-  display: block;
-  text-align: center;
-}
-
-#cvp {
-  font-size: 1em;
-  color: rgb(117, 6, 6);
-  text-align: center;
-  margin: 10px 0;
-}
-
-#PP img {
-  float: none;
-  display: block;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 210px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#Theh2 {
-  margin-top: 20px;
-}
-
-#Maintext {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-#GT {
-  font-size: 1em;
-  background-color: #08080825;
-  border-radius: 5px;
-}
-
-#GDP {
-  font-size: 1.2em;
-}
-
-#MOP {
-  font-size: 1.2em;
-}
-
+/* --- DESKTOP STYLES (Min-width: 768px) --- */
 @media (min-width: 768px) {
+  /* Navigation */
   #navi {
-    flex-direction: row;
+    flex-direction: row; /* Horizontal navigation */
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 120px;
@@ -176,34 +156,40 @@ footer {
     padding: 15px 30px;
     margin: 0 20px;
   }
+
+  /* Main Heading */
   #Tarek {
     font-size: 50px;
-    text-align: left;
+    text-align: left; /* Align left on desktop */
+    padding-left: 20px; /* Add some padding if background is there */
+  }
+
+  /* Other Headings */
+  h2, h3, h4, h5 {
+    text-align: left; /* Align left on desktop */
+    padding-left: 20px;
+  }
+
+  /* Profile Section - Desktop Layout */
+  .profile-content {
+    flex-direction: row; /* Arrange image and text side-by-side */
+    justify-content: space-between; /* Space out items */
+    align-items: flex-start; /* Align to the top */
+    padding: 30px; /* More padding on desktop */
+  }
+
+  #PP {
+      flex-shrink: 0; /* Prevent image from shrinking */
   }
   #PP img {
-    float: right;
-    margin-left: 20px;
     width: 210px;
     height: 260px;
+    margin: 0;
+    margin-right: 30px; /* Space between image and text */
   }
-  #Theh2 {
-    margin-top: 130px;
-  }
-  #Maintext {
-    font-size: 21px;
-    margin-bottom: 70px;
-  }
-  #CV {
-    font-size: 50px;
-  }
-  #cvp {
-    font-size: 20px;
-  }
-  h2, h3, h4, h5 {
-    text-align: left;
-  }
-}
 
-#MOP {
-  font-size: 23px;
+  #Maintext {
+    flex-grow: 1; /* Allow text to fill remaining space */
+    margin-top: 0;
+  }
 }
