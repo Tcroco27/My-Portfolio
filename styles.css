@@ -1,193 +1,168 @@
-/* General Body and Layout */
+@media (max-width: 768px) {
+  #Coverpic {
+    background-position: center;
+    max-height: 130px;
+  }
+}
+
 body {
   background-color: #9a9a9a;
   font-family: Arial, sans-serif;
 }
 
+
 #Coverpic {
   background-image: url(Data/Coverpic.jpg);
-  background-size: cover; /* Cover the entire area */
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: contain;
   border-radius: 15px;
-  min-height: 200px; /* Minimum height for cover image */
-  width: 100%;
+
 }
 
-/* Navigation */
 #navi {
   display: flex;
-  flex-direction: column; /* Stack vertically on mobile */
+  justify-content: center;
   align-items: center;
-  padding: 20px 0;
 }
 
 #navi a {
-  display: block;
-  width: 80%;
-  max-width: 200px;
-  padding: 15px 0;
+
+  display: inline-block;
+  padding: 15px 30px;
   background-color: #333;
   color: #fff;
   text-decoration: none;
   border-radius: 15px;
-  text-align: center;
-  margin: 10px 0;
+  margin-right: 100px;
+  margin-top: 100px;
+  margin-bottom: 120px;
 }
 
 #navi a:hover {
   background-color: #05196c97;
 }
 
-/* Main Content Area */
+#Tarek {
+  font-size: 50px;
+}
+
+h2 {
+  background-color: #0808083e;
+  border-radius: 5px
+}
+
+h3 {
+  background-color: #0808083e;
+  border-radius: 5px
+}
+
+h4 {
+  background-color: #0808083e;
+  border-radius: 5px
+}
+
+h5 {
+  background-color: #0808083e;
+  border-radius: 5px
+}
+
 main {
   padding: 20px;
-  max-width: 900px; /* Limit content width on large screens */
-  margin: 20px auto; /* Center content horizontally */
 }
 
-/* Headings */
-#Tarek {
-  font-size: 3em; /* Responsive font size */
-  text-align: center;
-  margin-top: 20px;
-  background-color: #0808083e;
+#g {
+  background-color: #9a9a9a;
+  border-radius: 5px
+}
+
+#g2 {
+  background-color: #9a9a9a;
   border-radius: 5px;
-  padding: 10px;
+  font-size: 30px;
 }
 
-h2, h3, h4, h5 { /* Grouped for consistent styling */
-  background-color: #0808083e;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 30px; /* More space above sections */
-  margin-bottom: 15px;
-  text-align: center; /* Center on mobile */
-}
-
-/* Profile Picture & Main Text Section (Mobile-first) */
-.profile-content {
-    display: flex;
-    flex-direction: column; /* Stack image and text vertically on mobile */
-    align-items: center; /* Center items */
-    gap: 20px; /* Space between items */
-    margin-top: 30px;
-    background-color: #ffffff1a; /* Light background for the section */
-    border-radius: 10px;
-    padding: 20px;
-}
-
-#PP img {
-  width: 100%; /* Make image fluid */
-  max-width: 210px; /* Limit max size */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#Maintext {
-  font-size: 1.1em; /* Slightly larger for readability */
-  line-height: 1.6; /* Improved line spacing */
-  text-align: justify; /* Justify text for a cleaner block */
-}
-
-/* Resume Links */
-#cvp {
-  font-size: 1em;
-  color: rgb(117, 6, 6);
-  text-align: center;
-  margin: 20px 0 5px; /* Spacing for resume text */
-}
-
-#CV {
-  font-size: 2em;
-  display: block; /* Make it a block element to center */
-  text-align: center;
-  margin-bottom: 30px; /* Space after the CV link */
-  color: #007bff; /* A nice link color */
-  text-decoration: underline;
-}
-#CV:hover {
-    color: #0056b3;
-}
-
-
-/* Tech Stack & Awards List Items */
-main ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-    margin-top: 10px;
-}
-
-main ul li {
-    background-color: #ffffff0f;
-    padding: 10px 15px;
-    border-radius: 5px;
-    margin-bottom: 8px; /* Space between list items */
-    font-size: 1.1em;
-    color: #eee;
-}
-
-/* Footer */
 footer {
   background-color: #333;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   border-radius: 15px;
   color: #fff;
-  font-size: 0.9em;
-  margin-top: 40px; /* More space before footer */
+  font-size: 14px;
+  margin: 30;
 }
 
-/* --- DESKTOP STYLES (Min-width: 768px) --- */
-@media (min-width: 1080px) {
-  /* Navigation */
-  #navi {
-    flex-direction: row; /* Horizontal navigation */
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 120px;
-  }
-  #navi a {
-    display: inline-block;
-    width: auto;
-    padding: 15px 30px;
-    margin: 0 20px;
-  }
+#c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 
-  /* Main Heading */
-  #Tarek {
-    font-size: 50px;
-    text-align: left; /* Align left on desktop */
-    padding-left: 20px; /* Add some padding if background is there */
-  }
+}
 
-  /* Other Headings */
-  h2, h3, h4, h5 {
-    text-align: left; /* Align left on desktop */
-    padding-left: 20px;
-  }
+#g {
+  font-size: 18px;
+}
 
-  /* Profile Section - Desktop Layout */
-  .profile-content {
-    flex-direction: row; /* Arrange image and text side-by-side */
-    justify-content: space-between; /* Space out items */
-    align-items: flex-start; /* Align to the top */
-    padding: 30px; /* More padding on desktop */
-  }
+#i {
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-  #PP {
-      flex-shrink: 0; /* Prevent image from shrinking */
-  }
-  #PP img {
-    width: 210px;
-    height: 260px;
-    margin: 0;
-    margin-right: 30px; /* Space between image and text */
-  }
+#o {
 
-  #Maintext {
-    flex-grow: 1; /* Allow text to fill remaining space */
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 200px;
+  height: 150px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#CV{
+  font-size: 50px;
+}
+
+#cvp{
+  font-size: 20px;
+  color: rgb(117, 6, 6);
+}
+
+#PP img{
+  float: right;
+    margin-bottom: 20px;
+}
+
+#Theh2 {
+  margin-top: 130px;
+
+}
+
+#Maintext {
+  font-size: 21px;
+  margin-bottom: 70px;
+
+}
+
+#GT {
+  font-size: 20px;
+  background-color: #08080825;
+  border-radius: 5px
+}
+
+#GDP {
+  font-size: 25px;
+}
+
+
+#MOP {
+  font-size: 23px;
+}
     margin-top: 0;
   }
 }
