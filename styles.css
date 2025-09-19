@@ -165,7 +165,7 @@ footer {
 }
 
 /* --- DESKTOP STYLES (min-width: 768px) --- */
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   /* Nav and Header */
   #navi {
     flex-direction: row;
