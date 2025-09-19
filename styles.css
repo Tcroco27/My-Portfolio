@@ -1,168 +1,235 @@
-@media (max-width: 768px) {
-  #Coverpic {
-    background-position: center;
-    max-height: 130px;
-  }
-}
-
+/* --- GLOBAL STYLES --- */
 body {
   background-color: #9a9a9a;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+}
 
+/* Nav and Header */
 #Coverpic {
   background-image: url(Data/Coverpic.jpg);
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   border-radius: 15px;
-
+  min-height: 200px;
+  width: 100%;
 }
 
 #navi {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 20px 0;
 }
 
 #navi a {
-
-  display: inline-block;
-  padding: 15px 30px;
+  display: block;
+  width: 80%;
+  max-width: 200px;
+  padding: 15px 0;
   background-color: #333;
   color: #fff;
   text-decoration: none;
   border-radius: 15px;
-  margin-right: 100px;
-  margin-top: 100px;
-  margin-bottom: 120px;
+  text-align: center;
+  margin: 10px 0;
 }
 
 #navi a:hover {
   background-color: #05196c97;
 }
 
-#Tarek {
-  font-size: 50px;
-}
-
-h2 {
+/* General Heading Styles */
+h2, h3, h4, h5 {
   background-color: #0808083e;
-  border-radius: 5px
-}
-
-h3 {
-  background-color: #0808083e;
-  border-radius: 5px
-}
-
-h4 {
-  background-color: #0808083e;
-  border-radius: 5px
-}
-
-h5 {
-  background-color: #0808083e;
-  border-radius: 5px
-}
-
-main {
-  padding: 20px;
-}
-
-#g {
-  background-color: #9a9a9a;
-  border-radius: 5px
-}
-
-#g2 {
-  background-color: #9a9a9a;
   border-radius: 5px;
-  font-size: 30px;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
+/* Footer */
 footer {
   background-color: #333;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   border-radius: 15px;
   color: #fff;
-  font-size: 14px;
-  margin: 30;
+  font-size: 0.9em;
+  margin-top: 40px;
 }
 
-#c {
+/* --- INDEX PAGE STYLES (HOME PAGE) --- */
+/* The main content section */
+.profile-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  background-color: #ffffff1a;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#Tarek {
+  font-size: 3em;
   text-align: center;
-
+  margin-top: 20px;
 }
 
-#g {
-  font-size: 18px;
-}
-
-#i {
-  float: left;
-  margin-right: 10px;
-  margin-top: 5px;
-  width: 150px;
-  height: 100px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#o {
-
-  float: left;
-  margin-right: 10px;
-  margin-top: 5px;
-  width: 200px;
-  height: 150px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#CV{
-  font-size: 50px;
-}
-
-#cvp{
-  font-size: 20px;
-  color: rgb(117, 6, 6);
-}
-
-#PP img{
-  float: right;
-    margin-bottom: 20px;
-}
-
-#Theh2 {
-  margin-top: 130px;
-
+#PP img {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #Maintext {
-  font-size: 21px;
-  margin-bottom: 70px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: justify;
+}
 
+#cvp {
+  font-size: 1em;
+  color: rgb(117, 6, 6);
+  text-align: center;
+  margin: 20px 0 5px;
+}
+
+#CV {
+  font-size: 2em;
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+#CV:hover {
+  color: #0056b3;
+}
+
+/* --- PROJECTS PAGE STYLES --- */
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff1a;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
 }
 
 #GT {
-  font-size: 20px;
-  background-color: #08080825;
-  border-radius: 5px
+  font-size: 1.2em;
 }
 
-#GDP {
-  font-size: 25px;
+#g {
+  font-size: 1em;
+  color: #000;
 }
 
-
-#MOP {
-  font-size: 23px;
+#g2 {
+  font-size: 1.5em;
+  color: #000;
+  margin-top: 10px;
 }
+
+.project-img {
+  width: 100%;
+  max-width: 400px; /* Moderate size on mobile */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 15px;
+}
+
+.game-variants {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* --- DESKTOP STYLES (min-width: 768px) --- */
+@media (min-width: 768px) {
+  /* Nav and Header */
+  #navi {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 120px;
+  }
+
+  #navi a {
+    display: inline-block;
+    width: auto;
+    padding: 15px 30px;
+    margin: 0 20px;
+  }
+
+  /* Index Page Styles */
+  #Tarek {
+    font-size: 50px;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .profile-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  #PP img {
+    width: 210px;
+    height: 260px;
+    margin: 0;
+    margin-right: 30px;
+  }
+
+  #Maintext {
+    flex-grow: 1;
     margin-top: 0;
+  }
+  
+  /* Projects Page Styles */
+  .project-item {
+    flex-direction: row;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .project-item a {
+    order: 2; /* Move the image to the right */
+  }
+
+  .project-img {
+      max-width: 300px; /* Adjust image size for desktop */
+  }
+
+  .game-variants {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+  }
+
+  .game-variants .project-img {
+      max-width: 200px;
   }
 }
