@@ -20,13 +20,21 @@ main {
   border-radius: 15px;
   min-height: 200px;
   width: 100%;
+  height: 400px; /* NEW: Use a fixed height (e.g., 400px) to make it a banner */
+  position: relative; /* NEW: Set to 'relative' to act as a positioning context for its children */
 }
 
 #navi {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  position: absolute; /* NEW: Use 'absolute' to place it on top of the parent #Coverpic */
+  top: 50%; /* NEW: Position it vertically in the middle of the #Coverpic */
+  left: 50%; /* NEW: Position it horizontally in the middle of the #Coverpic */
+  transform: translate(-50%, -50%); /* NEW: Use a transform to precisely center it */
+  padding: 0; /* NEW: Remove padding, as positioning will handle placement */
+  margin: 0; /* NEW: Remove margin for cleaner positioning */
+  width: 100%; /* Ensure it spans the full width */
 }
 
 #navi a {
@@ -68,6 +76,7 @@ footer {
 }
 
 /* --- INDEX PAGE STYLES (HOME PAGE) --- */
+/* The main content section */
 .profile-content {
   display: flex;
   flex-direction: column;
@@ -148,7 +157,7 @@ footer {
 
 .project-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; /* Moderate size on mobile */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -164,7 +173,7 @@ footer {
 }
 
 /* --- DESKTOP STYLES (min-width: 768px) --- */
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   /* Nav and Header */
   #navi {
     flex-direction: row;
@@ -214,17 +223,17 @@ footer {
   }
 
   .project-item a {
-    order: 2;
+    order: 2; /* Move the image to the right */
   }
 
   .project-img {
-      max-width: 300px;
+      max-width: 300px; /* Adjust image size for desktop */
   }
 
   .game-variants {
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 30px;
   }
 
