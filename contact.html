@@ -1,40 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Info - My Portfolio</title>
+  <title>Contact — Tarek el Jarab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header>
 
-    <div id="Coverpic">
+  <div class="noise"></div>
+  <div class="scanlines"></div>
 
-      <nav>
-        <ul id="navi">
-          <a href="index.html">Tarek</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-        </ul>
-      </nav>
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">T<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
     </div>
-  </header>
+  </nav>
 
-  <main id="c">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">— Get in Touch</p>
+      <h1 class="page-title">LET'S <span>CONNECT</span></h1>
+      <p class="page-subtitle">Open to opportunities, collaborations, and new projects.</p>
+    </div>
+  </section>
 
-    <h2>Contact Information</h2>
-    <h3>If you have any inquiries or would like to get in touch, please feel free to reach out to me using the following
-      contact details:</h3>
+  <!-- CONTACT -->
+  <section class="contact-section section">
+    <div class="container">
+      <div class="contact-grid">
 
+        <a href="https://github.com/Tcroco27" target="_blank" class="contact-card">
+          <div class="contact-icon">
+            <img src="Data/github.png" alt="GitHub">
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">@Tcroco27</span>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
 
+        <a href="mailto:T2027jk@gmail.com" class="contact-card">
+          <div class="contact-icon">
+            <img src="Data/gmail.png" alt="Gmail">
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">T2027jk@gmail.com</span>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
 
-    <h1 id="CT">Github<a href="https://github.com/Tcroco27"><img src="Data/github.png"
-          style=" width: 100px; height:100px; border-radius: 300px;"></a></h1>
+        <a href="https://www.linkedin.com/in/tarek-jarab-6b2a75247/" target="_blank" class="contact-card">
+          <div class="contact-icon">
+            <img src="Data/LinkedIn.png" alt="LinkedIn">
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">Tarek el Jarab</span>
+          </div>
+          <span class="contact-arrow">→</span>
+        </a>
 
+      </div>
+
+      <div class="contact-resume">
+        <p>Want to see my full background?</p>
+        <a href="Data/TareksResume.pdf" download class="btn-primary">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Tarek el Jarab</span>
+      <span class="footer-copy">&copy; 2025 · All rights reserved</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
     <h1 id="CT"><img src="Data/gmail.png" style=" width: 100px; height:100px; border-radius: 300px;"></a>Gmail:
       T2027jk@gmail.com</h1>
 
