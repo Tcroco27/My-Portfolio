@@ -10,10 +10,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- 
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="ld-scanlines"></div>
+    <div class="ld-flash" id="ld-flash"></div>
+    <div class="ld-logo" id="ld-logo">T<span>.</span></div>
+    <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
+    <div class="ld-label" id="ld-lbl">Loading</div>
+    <div class="ld-enter" id="ld-enter">Click anywhere to enter</div>
+  </div>
+
+  <div id="site-content" style="display:none;">
   <div class="noise"></div>
   <div class="scanlines"></div>
- 
+
   <!-- NAV -->
   <nav class="nav">
     <a href="index.html" class="nav-logo">T<span>.</span></a>
@@ -23,7 +34,7 @@
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
- 
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
@@ -44,7 +55,7 @@
       <div class="scroll-line"></div>
     </div>
   </section>
- 
+
   <!-- ABOUT -->
   <section class="about section">
     <div class="container">
@@ -76,13 +87,13 @@
       </div>
     </div>
   </section>
- 
+
   <!-- TECH STACK -->
   <section class="stack section">
     <div class="container">
       <div class="section-label">— Tech Stack</div>
       <h2 class="section-heading">TOOLS OF THE <span>TRADE</span></h2>
- 
+
       <div class="stack-grid">
         <div class="stack-col">
           <h3 class="stack-cat">Engines &amp; Software</h3>
@@ -122,7 +133,7 @@
             <span class="skill-level low">Learning</span>
           </div>
         </div>
- 
+
         <div class="stack-col">
           <h3 class="stack-cat">Languages</h3>
           <div class="skill-item">
@@ -156,7 +167,7 @@
             <span class="skill-level low">Learning</span>
           </div>
         </div>
- 
+
         <div class="stack-col stack-soft">
           <h3 class="stack-cat">Leadership &amp; Soft Skills</h3>
           <ul class="soft-list">
@@ -170,7 +181,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
@@ -182,7 +193,9 @@
       </div>
     </div>
   </footer>
- 
+
+  </div> <!-- /site-content -->
+
   <script src="script.js"></script>
 </body>
 </html>
