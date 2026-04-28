@@ -13,11 +13,12 @@
 
   <!-- LOADING SCREEN -->
   <div id="loader">
-    <svg id="ld-svg" style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 400 480" preserveAspectRatio="xMidYMid meet"></svg>
-    <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;margin-top:200px;">
-      <div id="ld-pct" style="font-family:'Share Tech Mono',monospace;font-size:13px;letter-spacing:0.3em;color:rgba(57,255,106,0.7);">0%</div>
-      <div id="ld-enter" style="font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,228,220,0.3);margin-top:16px;opacity:0;transition:opacity 0.5s;">Click anywhere to enter</div>
-    </div>
+    <div class="ld-scanlines"></div>
+    <div class="ld-flash" id="ld-flash"></div>
+    <div class="ld-logo" id="ld-logo">T<span>.</span></div>
+    <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
+    <div class="ld-label" id="ld-lbl">Loading</div>
+    <div class="ld-enter" id="ld-enter">Click anywhere to enter</div>
   </div>
 
   <div id="site-content" style="display:none;">
