@@ -1,93 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Tarek el Jarab — Game Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-  <header>
-
-    <div id="Coverpic">
-
-      <nav>
-        <ul id="navi">
-          <a href="index.html">Tarek</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-        </ul>
-      </nav>
-
+ 
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+ 
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">T<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
-
-  </header>
-
-
-  <main>
-    <h2 id="Tarek">// Tarek //</h2>
-
-    <div id="PP">
-      <img src="Data/Profile_pic.jpg" alt="Profile Picture" style="width: 210px; height: 260px;">
+  </nav>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="Data/Coverpic.jpg" alt="" class="hero-cover">
+      <div class="hero-overlay"></div>
     </div>
-
-    <p id="Maintext">
-    A passionate and dedicated student of Digital Media Game Development at York University, possesses an expert-level proficiency in Unreal Engine 5, and experienced in leading and managing small development teams to create fully-fledged games, with hands-on expertise in the Unreal Blueprint system. With a solid foundation in C# and other programming languages, offering a portfolio of completed projects published on Itch.io and Game Jolt. Committed to leveraging my technical and leadership skills, and dedicated to building memorable and impactful interactive experiences. My long-term career goal is to become a professional Lead Game Director, establishing games the world will remember for years to come.
-    </p>
-
-    <p id="cvp"> /// CLICK FOR RESUME ///</p><a id="CV" href="Data\TareksResume.pdf" download="Tarek's RESUME">Tarek's Resume</a><p id="cvp"> /// CLICK FOR RESUME ///</p>
-
-
-
-
-    <h2 id="Theh2">// Tech Stack //</h2>
-
-    <h4>Software and Tools</h4>
-    <ul>
-      <li>Unreal Engine &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Expert"</li>
-      <li>Unity &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/////// "Proficiency : Novice"</li>
-      <li>Visual Studio Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Expert"</li>
-      <li>Eclipse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Expert"</li>
-      <li>Maya&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///////"Proficiency : Novice"</li>
-      <li>Blender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ///////  "Proficiency : Mediocre"</li>
-      <li>Github&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Expert"</li>
-      <li>GitLab&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Expert"</li>
-      
-    </ul>
-
-    <h4>Code Languages</h4>
-    <ul>
-      <li>C++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Mediocre"</li>
-      <li>C# &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Mediocre"</li>
-      <li>HTML  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/////// "Proficiency : Expert"</li>
-      <li>CSS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Mediocre"</li>
-      <li>JavaScript &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Novice"</li>
-      <li>Java &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Mediocre"</li>
-      <li>Python &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /////// "Proficiency : Novice"</li>
-    </ul>
-
-    <h4>Other Important Skills</h4>
-    <ul>
-      <li>Leadership</li>
-      <li>Extensive Techinical Support</li>
-      <li>Team Management</li>
-      <li>Experienced teamwork</li>
-      <li>Intermediate organization</li>
-      <li>Fluent communication skills</li>
-    </ul>
-
-  </main>
-
-  <footer>
-    &copy; 2024 Tarek el Jarab. All rights reserved.
+    <div class="hero-content">
+      <p class="hero-eyebrow">Game Developer &amp; Team Lead</p>
+      <h1 class="hero-name">TAREK<br><span>EL JARAB</span></h1>
+      <p class="hero-sub">York University · Digital Media Game Development<br>Unreal Engine 5 · Blueprint Systems · Lead Game Director</p>
+      <div class="hero-cta">
+        <a href="projects.html" class="btn-primary">View Projects</a>
+        <a href="Data/TareksResume.pdf" download class="btn-secondary">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+ 
+  <!-- ABOUT -->
+  <section class="about section">
+    <div class="container">
+      <div class="section-label">— About</div>
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="Data/Profile_pic.jpg" alt="Tarek el Jarab" class="about-img">
+          <div class="about-img-border"></div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-heading">BUILDING WORLDS.<br>LEADING TEAMS.<br><span>MAKING IMPACT.</span></h2>
+          <p>A passionate game developer at York University specializing in <strong>Unreal Engine 5</strong> and interactive experience design. I've led multiple development teams from concept to shipped product — with titles published on Itch.io and GameJolt.</p>
+          <p>My long-term goal: become a <strong>Lead Game Director</strong> and create games the world will remember for years to come.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">8+</span>
+              <span class="stat-label">Shipped Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Teams Led</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">UE5</span>
+              <span class="stat-label">Expert Level</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- TECH STACK -->
+  <section class="stack section">
+    <div class="container">
+      <div class="section-label">— Tech Stack</div>
+      <h2 class="section-heading">TOOLS OF THE <span>TRADE</span></h2>
+ 
+      <div class="stack-grid">
+        <div class="stack-col">
+          <h3 class="stack-cat">Engines &amp; Software</h3>
+          <div class="skill-item">
+            <span class="skill-name">Unreal Engine 5</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">GitHub / GitLab</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Visual Studio Code</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Eclipse</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Blender</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:45%"></div></div>
+            <span class="skill-level mid">Intermediate</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Maya</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:30%"></div></div>
+            <span class="skill-level low">Learning</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Unity</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:28%"></div></div>
+            <span class="skill-level low">Learning</span>
+          </div>
+        </div>
+ 
+        <div class="stack-col">
+          <h3 class="stack-cat">Languages</h3>
+          <div class="skill-item">
+            <span class="skill-name">HTML / CSS</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+            <span class="skill-level expert">Expert</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">C#</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:55%"></div></div>
+            <span class="skill-level mid">Intermediate</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">C++</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:50%"></div></div>
+            <span class="skill-level mid">Intermediate</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:48%"></div></div>
+            <span class="skill-level mid">Intermediate</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:32%"></div></div>
+            <span class="skill-level low">Learning</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:28%"></div></div>
+            <span class="skill-level low">Learning</span>
+          </div>
+        </div>
+ 
+        <div class="stack-col stack-soft">
+          <h3 class="stack-cat">Leadership &amp; Soft Skills</h3>
+          <ul class="soft-list">
+            <li><span class="dot"></span>Team Lead — up to 6 developers</li>
+            <li><span class="dot"></span>Sprint planning &amp; milestone tracking</li>
+            <li><span class="dot"></span>Cross-discipline team communication</li>
+            <li><span class="dot"></span>Technical support &amp; debugging</li>
+            <li><span class="dot"></span>Fluent in English &amp; Arabic</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Tarek el Jarab</span>
+      <span class="footer-copy">&copy; 2025 · All rights reserved</span>
+      <div class="footer-links">
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
-
-
+ 
   <script src="script.js"></script>
 </body>
-
 </html>
