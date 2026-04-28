@@ -1,116 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Tarek el Jarab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div id="Coverpic">
-            <nav>
-                <ul id="navi">
-                    <a href="index.html">Tarek</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html">Contact</a>
-                </ul>
-            </nav>
+
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">T<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link active">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">— Portfolio</p>
+      <h1 class="page-title">SHIPPED <span>WORK</span></h1>
+      <p class="page-subtitle">8 games. Multiple teams. One goal — make something memorable.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section class="featured section">
+    <div class="container">
+      <div class="section-label">— Featured / Latest</div>
+      <div class="featured-card">
+        <div class="featured-img-wrap">
+          <img src="Data/Cattlemenas.png" alt="CattleMan's Crossing" class="featured-img">
+          <div class="featured-badge">Capstone 2025</div>
         </div>
-    </header>
+        <div class="featured-info">
+          <h2 class="featured-title">CATTLEMAN'S CROSSING</h2>
+          <div class="project-meta">
+            <span class="tag">Unreal Engine 5</span>
+            <span class="tag">Team Lead</span>
+            <span class="tag">6-Person Team</span>
+            <span class="tag">Itch.io</span>
+          </div>
+          <p>The culmination of my degree — a fully-fledged game built with a team of 6 across the 2024/2025 academic year as a Capstone Project. Released on Itch.io on April 15, 2025.</p>
+          <a href="https://riordan-palmer.itch.io/cattlemans-crossing" target="_blank" class="btn-primary">Play on Itch.io →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <h2>What I have accomplished</h2>
-        <p>
-            As a game developer, I've worked on diverse projects using Unreal Engine and other tools. I've explored various creative avenues, from immersive game experiences to web applications. Each project has fueled my passion for game development and expanded my skill set.
-        </p>
+  <!-- GAME PROJECTS GRID -->
+  <section class="projects-section section">
+    <div class="container">
+      <div class="section-label">— Game Development</div>
+      <h2 class="section-heading">ALL <span>PROJECTS</span></h2>
 
-        <h3 id="GDP">My game development projects</h3>
-        <p id="GT">
-            Click the Images for links to my Projects!
-        </p>
+      <div class="projects-grid">
 
-         <div class="project-item">
-            <h4 id="GT">/// CattleMans Crossing ///</h4>
-            <p id="g">A game professionally made on unreal Engine 5 with me and 5 others on a Capstone Project course throughout the years 2024/2025 and finally released it on Itch.IO in April 15th of 2025</p> 
-            <div class="game-variants">
-                <a href="https://riordan-palmer.itch.io/cattlemans-crossing" target="_blank">
-                    <img class="project-img" src="Data/Cattlemenas.png" alt="Catttlemenas">
-                </a>
+        <a href="https://delyy.itch.io/graverunner" target="_blank" class="project-card">
+          <div class="project-card-img">
+            <img src="Data/Grave Runner.png" alt="Grave Runner">
+            <div class="project-card-overlay">
+              <span>Play Project →</span>
             </div>
-        </div>
-        <div class="project-item">
-            <h4 id="GT">/// Grave Runner ///</h4>
-            <p id="g">An unreal engine 5 game that was varied on my targets for the course where one variant is a Boss rush(Diggers) and another is a Boss Run(Runners) . Me and my team took a month to make these variations on our game.</p> 
-            <div class="game-variants">
-                <a href="https://delyy.itch.io/graverunner" target="_blank">
-                    <img class="project-img" src="Data/Grave Runner.png" alt="Grave Runner">
-                </a>
+          </div>
+          <div class="project-card-body">
+            <h3>Grave Runner</h3>
+            <div class="project-meta">
+              <span class="tag">UE5</span>
+              <span class="tag">Team Project</span>
             </div>
-        </div>
-        <div class="project-item">
-            <h4 id="GT">/// Dissolution ///</h4>
-            <p id="g">This is a short first-person experience about exploring unique levels and finding new ways of interacting with the world around you. As you unravel the mystery of the game, listen to the brief ruminations of a man coming to turns with his existence. </p>
-            <a href="https://riordan-palmer.itch.io/dissolution" target="_blank">
-                <img class="project-img" src="Data/Dissoulution.png" alt="Dissolution">
-            </a>
-        </div>
+            <p>A dual-variant UE5 game — Boss Rush (Diggers) and Boss Run (Runners). Built with a team in under a month, delivering two complete game variants.</p>
+          </div>
+        </a>
 
-        <div class="project-item">
-            <h4 id="GT">/// Sneaky Slumbers ///</h4>
-            <p id="g">Sneaky Slumbers is an Unreal engine game that I worked on with my team members for a course in University as a passion project, where you must sneak through security guards in a dystopian orphanage by pretending to sleep or snore to escape </p>
-            <a href="https://delyy.itch.io/sneaky-slumbers" target="_blank">
-                <img class="project-img" src="Data/Sneaky Slumber.png" alt="Sneaky Slumbers">
-            </a>
-        </div>
+        <a href="https://riordan-palmer.itch.io/dissolution" target="_blank" class="project-card">
+          <div class="project-card-img">
+            <img src="Data/Dissoulution.png" alt="Dissolution">
+            <div class="project-card-overlay">
+              <span>Play Project →</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3>Dissolution</h3>
+            <div class="project-meta">
+              <span class="tag">UE5</span>
+              <span class="tag">Walking Sim</span>
+            </div>
+            <p>A short first-person experience about exploration and mystery. Features unique level interactions and a narrative about a man coming to terms with his existence.</p>
+          </div>
+        </a>
 
-        <div class="project-item">
-            <h4 id="GT">/// HorrorHugger ///</h4>
-            <p id="g">Horror Hugger is an unreal engine 5 project that I led and managed with 5 different team members throughout the semester. It is a fully fledged story game about a King with a plethora of hand made mazes and how he must save his people with the power of hugging and shoving.</p>
-            <a href="https://gamejolt.com/games/HorrorHuggerProl/914352" target="_blank">
-                <img class="project-img" src="Data/WtuLan.png" alt="HorrorHugger">
-            </a>
-        </div>
+        <a href="https://delyy.itch.io/sneaky-slumbers" target="_blank" class="project-card">
+          <div class="project-card-img">
+            <img src="Data/Sneaky Slumber.png" alt="Sneaky Slumbers">
+            <div class="project-card-overlay">
+              <span>Play Project →</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3>Sneaky Slumbers</h3>
+            <div class="project-meta">
+              <span class="tag">UE5</span>
+              <span class="tag">Stealth</span>
+            </div>
+            <p>Stealth game set in a dystopian orphanage. Evade security guards by pretending to sleep — a creative mechanic born from a university passion project.</p>
+          </div>
+        </a>
 
-        <div class="project-item">
-            <h4 id="GT">/// Walks on Your Skin prologue ///</h4>
-            <p id="g">WOYS prologue was made as a beginning project on Unreal engine 5 which introduced me to all its features and made me love Unreal.This project was later adjusted to become a walking simulator and a project for a course called DATT3300.The game is about a murderer in the forest and you plan to find out who is doing the coming atrocities</p>
-            <a href="https://crocostar27.itch.io/walks-on-your-skin-prologue" target="_blank">
-                <img class="project-img" src="Data/WOYS P.png" alt="WOYS">
-            </a>
-        </div>
+        <a href="https://gamejolt.com/games/HorrorHuggerProl/914352" target="_blank" class="project-card">
+          <div class="project-card-img">
+            <img src="Data/WtuLan.png" alt="HorrorHugger">
+            <div class="project-card-overlay">
+              <span>Play Project →</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3>HorrorHugger</h3>
+            <div class="project-meta">
+              <span class="tag">UE5</span>
+              <span class="tag">Team Lead</span>
+              <span class="tag">GameJolt</span>
+            </div>
+            <p>Led a team of 6 to build a full story game about a King who must save his people. Features hand-crafted mazes and a unique hug-and-shove combat mechanic.</p>
+          </div>
+        </a>
 
-        <div class="project-item">
-            <h4 id="GT">/// Bugzy ninja ///</h4>
-            <p id="g">Bugzy Ninja was my first game on Unity game engine that I made and published on itch.io. The game is about a small ninja running away from a giant bug in hopes of escaping, collecting items for the score and powerups on the way.</p>
-            <a href="https://tcroco27.itch.io/bugzy-ninja" target="_blank">
-                <img class="project-img" src="Data/Bugzy Ninja.png" alt="Bugzy Ninja">
-            </a>
-        </div>
-        
-        <div class="project-item">
-            <h4 id="GT">/// Choppers Rampage ///</h4>
-            <p id="g">Choppers Rampage was my first-ever game I made and published, it was made by Bitsy game engine which was perfect for a simple story horror game, the game talks about a man who experiences the horror of a serial killer that haunts him. I eventually finished and published the game on Itch.io.</p>
-            <a href="https://tcroco27.itch.io/choppers-rampage" target="_blank">
-                <img class="project-img" src="Data/Choppers Rampage.png" alt="Choppers Rampage">
-            </a>
-        </div>
+        <a href="https://crocostar27.itch.io/walks-on-your-skin-prologue" target="_blank" class="project-card">
+          <div class="project-card-img">
+            <img src="Data/WOYS P.png" alt="Walks on Your Skin">
+            <div class="project-card-overlay">
+              <span>Play Project →</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3>Walks on Your Skin</h3>
+            <div class="project-meta">
+              <span class="tag">UE5</span>
+              <span class="tag">Horror</span>
+              <span class="tag">Solo</span>
+            </div>
+            <p>My UE5 origin project — a forest horror walking simulator built for DATT3300. This is where my love for Unreal began.</p>
+          </div>
+        </a>
 
-        <h3 id="MOP">My Other Projects</h3>
-        
-        <div class="project-item">
-            <h4 id="GT">/// Focus fiends startup web app ///</h4>
-            <p id="g">This website was made for a course called DATT/2100 Publishing in digital media, the website serves as a startup for an app called focus fiends which allows individuals to focus off their devices in coordination with a friend or creature for inspiration. The website was made on Wix and features content and assets from canva such as the app preview and the video animation</p>
-            <a href="https://t2002jk.wixsite.com/focusfiends" target="_blank">
-                <img class="project-img" src="Data/Focus Fiends.png" alt="Focus Fiends">
-            </a>
+        <a href="https://tcroco27.itch.io/bugzy-ninja" target="_blank" class="project-card">
+          <div class="project-card-img">
+            <img src="Data/Bugzy Ninja.png" alt="Bugzy Ninja">
+            <div class="project-card-overlay">
+              <span>Play Project →</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3>Bugzy Ninja</h3>
+            <div class="project-meta">
+              <span class="tag">Unity</span>
+              <span class="tag">Runner</span>
+              <span class="tag">Solo</span>
+            </div>
+            <p>My first Unity game — a score-chasing runner where a ninja races to escape a giant bug. Where my game dev journey began.</p>
+          </div>
+        </a>
+
+        <a href="https://tcroco27.itch.io/choppers-rampage" target="_blank" class="project-card">
+          <div class="project-card-img">
+            <img src="Data/Choppers Rampage.png" alt="Choppers Rampage">
+            <div class="project-card-overlay">
+              <span>Play Project →</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <h3>Chopper's Rampage</h3>
+            <div class="project-meta">
+              <span class="tag">Bitsy</span>
+              <span class="tag">Horror</span>
+              <span class="tag">First Game</span>
+            </div>
+            <p>My very first published game. A minimalist horror story built in Bitsy about a man haunted by a serial killer. Where it all started.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS -->
+  <section class="other-section section">
+    <div class="container">
+      <div class="section-label">— Beyond Games</div>
+      <h2 class="section-heading">OTHER <span>WORK</span></h2>
+      <div class="other-card">
+        <img src="Data/Focus Fiends.png" alt="Focus Fiends" class="other-img">
+        <div class="other-info">
+          <h3>Focus Fiends — Startup Web App</h3>
+          <div class="project-meta">
+            <span class="tag">Wix</span>
+            <span class="tag">Canva</span>
+            <span class="tag">DATT2100</span>
+          </div>
+          <p>A startup website for a productivity app that helps users focus away from devices alongside a friend or creature for motivation. Built for a Digital Media Publishing course.</p>
+          <a href="https://t2002jk.wixsite.com/focusfiends" target="_blank" class="btn-secondary">Visit Site →</a>
         </div>
-    </main>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        &copy; 2024 Tarek el Jarab. All rights reserved.
-    </footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Tarek el Jarab</span>
+      <span class="footer-copy">&copy; 2025 · All rights reserved</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
