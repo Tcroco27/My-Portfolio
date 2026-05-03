@@ -1,39 +1,368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Tarek el Jarab</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Tarek El Jarab</title>
+<meta name="description" content="Get in touch with Tarek El Jarab — Unreal Engine 5 developer in Toronto, available for junior gameplay and technical-design roles." />
+<meta name="theme-color" content="#0E0E10" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #0E0E10;
+    --bg-2: #16161A;
+    --fg: #EDE7D9;
+    --fg-dim: #A8A399;
+    --line: #2A2A2E;
+    --accent: #E2553A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: "Public Sans", system-ui, sans-serif;
+    line-height: 1.55; font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 1000;
+    opacity: 0.035; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 640px) { .wrap { padding: 0 20px; } }
+
+  .label {
+    color: var(--fg-dim); font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.12em; font-size: 10px;
+  }
+  .mono {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-size: 11px; font-weight: 500;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(14,14,16,0.78);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: baseline; gap: 12px; }
+  .brand .mark { font-family: "Fraunces", serif; font-weight: 600; font-size: 22px; letter-spacing: -0.02em; }
+  .brand .role {
+    color: var(--fg-dim); font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  @media (max-width: 600px) { .brand .role { display: none; } }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a {
+    font-family: "JetBrains Mono", monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--fg-dim); transition: color .25s;
+  }
+  nav ul a:hover, nav ul a.active { color: var(--accent); }
+
+  /* HEAD */
+  .page-head {
+    padding: 168px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-head .crumb {
+    color: var(--fg-dim); margin-bottom: 24px;
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px;
+  }
+  .page-head h1 {
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-variation-settings: "opsz" 144;
+    font-size: clamp(56px, 9vw, 144px);
+    line-height: 0.92; letter-spacing: -0.035em;
+  }
+  .page-head h1 em { font-style: italic; color: var(--accent); }
+  .page-head p {
+    margin-top: 28px; max-width: 720px;
+    font-size: 18px; color: var(--fg-dim); font-weight: 300;
+  }
+
+  /* OPEN TO WORK BLOCK */
+  section.open-to {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .open-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 96px;
+  }
+  @media (max-width: 880px) { .open-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .open-tag {
+    display: flex; align-items: center; gap: 12px; padding-top: 8px;
+    color: var(--fg-dim);
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    font-size: 11px; font-weight: 500;
+  }
+  .open-tag::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+  .open-body h2 {
+    font-family: "Fraunces", serif; font-weight: 400; font-style: italic;
+    font-size: clamp(32px, 4.5vw, 56px); line-height: 1; letter-spacing: -0.025em;
+    margin-bottom: 28px;
+  }
+  .open-body h2 em { font-style: normal; color: var(--accent); font-weight: 500; }
+  .open-body p {
+    font-size: 18px; line-height: 1.6; color: var(--fg);
+    max-width: 700px; font-weight: 300; margin-bottom: 18px;
+  }
+  .open-body p strong { font-weight: 600; }
+  .role-list {
+    margin-top: 32px;
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .role-list span {
+    border: 1px solid var(--line); padding: 8px 14px;
+    color: var(--fg-dim);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+    border-radius: 2px;
+  }
+
+  /* CHANNELS */
+  section.channels {
+    padding: 96px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .channels h2 {
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-size: clamp(40px, 5vw, 64px); line-height: 0.95;
+    letter-spacing: -0.025em; margin-bottom: 56px;
+  }
+  .channels h2 em { font-style: italic; color: var(--accent); }
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .channel-grid { grid-template-columns: 1fr; } }
+  .channel {
+    padding: 36px 32px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 20px;
+    transition: background .3s ease, transform .3s ease;
+    background: var(--bg);
+    position: relative;
+  }
+  .channel:hover { background: var(--bg-2); }
+  .channel .lab {
+    color: var(--fg-dim);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .channel .val {
+    font-family: "Fraunces", serif; font-weight: 500;
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+  }
+  .channel .arrow {
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
+    align-self: flex-start;
+    margin-top: auto;
+    transition: transform .25s;
+    display: inline-block;
+  }
+  .channel:hover .arrow { transform: translateX(8px); }
+
+  /* RESUME BLOCK */
+  section.resume {
+    padding: 96px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .resume-card {
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    padding: 56px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    transition: border-color .3s ease;
+  }
+  .resume-card:hover { border-color: var(--accent); }
+  @media (max-width: 720px) { .resume-card { padding: 40px 28px; } }
+  .resume-card h3 {
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.05; letter-spacing: -0.02em;
+  }
+  .resume-card h3 em { font-style: italic; color: var(--accent); }
+  .resume-card p { color: var(--fg-dim); margin-top: 10px; max-width: 460px; font-weight: 300; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border: 1px solid var(--fg); color: var(--fg);
+    font-family: "JetBrains Mono", monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.12em; transition: all .25s;
+  }
+  .btn:hover { background: var(--fg); color: var(--bg); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn.primary:hover { background: transparent; color: var(--accent); }
+
+  /* FOOTER */
+  footer { padding: 48px 0 56px; }
+  footer .wrap {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    color: var(--fg-dim); font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  footer a:hover { color: var(--accent); }
+
+  .reveal { opacity: 0; transform: translateY(20px); animation: rise .9s ease forwards; }
+  .reveal.d1 { animation-delay: .05s; }
+  .reveal.d2 { animation-delay: .15s; }
+  .reveal.d3 { animation-delay: .3s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+
+  /* Status pulse */
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border: 1px solid var(--accent); color: var(--accent);
+    border-radius: 999px;
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.12em;
+    margin-bottom: 24px;
+  }
+  .status-pill::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  @media (prefers-reduced-motion: reduce) { .status-pill::before { animation: none; } }
+</style>
 </head>
 <body>
 
-  <div class="noise"></div>
-  <div class="scanlines"></div>
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark">Tarek El Jarab</span><span class="role">UE5 / Gameplay</span></a>
+    <ul>
+      <li><a href="index.html">Index</a></li>
+      <li><a href="projects.html">Work</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">T<span>.</span></a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="projects.html" class="nav-link">Projects</a>
-      <a href="contact.html" class="nav-link active">Contact</a>
+<header class="page-head">
+  <div class="wrap">
+    <div class="crumb reveal d1">— Get in touch</div>
+    <h1 class="reveal d2">Let's<br/><em>talk.</em></h1>
+    <p class="reveal d3">Open to junior Unreal Engine, gameplay, and technical-design roles in Canada — full-time, contract, or co-op. Toronto-based, willing to relocate within Canada.</p>
+  </div>
+</header>
+
+<section class="open-to">
+  <div class="wrap">
+    <div class="open-grid">
+      <div class="open-tag">— What I'm looking for</div>
+      <div class="open-body">
+        <span class="status-pill">Available · May 2026</span>
+        <h2>The right team, building <em>real games.</em></h2>
+        <p>I'm actively interviewing for <strong>junior Unreal Engine 5</strong> roles — gameplay programming, technical design, or generalist positions where I can ship and grow. Equally interested in Canadian indie studios, AAA support studios, and Unreal Engine work outside games (simulation, virtual production, automotive, training).</p>
+        <p>I bring a working portfolio of eight shipped titles, hands-on UE5 / C++ / Blueprint experience, and proven leadership on student teams of up to six. I respond to every legitimate inquiry within 48 hours.</p>
+
+        <div class="role-list">
+          <span>Junior Gameplay Programmer</span>
+          <span>Unreal Engine Developer</span>
+          <span>Technical Designer</span>
+          <span>UE5 Generalist</span>
+          <span>Associate Producer</span>
+          <span>Co-op / Internship</span>
+        </div>
+      </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container">
-      <p class="hero-eyebrow">— Get in Touch</p>
-      <h1 class="page-title">LET'S <span>CONNECT</span></h1>
-      <p class="page-subtitle">Open to opportunities, collaborations, and new projects.</p>
+<section class="channels">
+  <div class="wrap">
+    <h2>Channels.</h2>
+
+    <div class="channel-grid">
+
+      <a class="channel" href="mailto:T2027jk@gmail.com">
+        <span class="lab">/ 01 — Email · best for opportunities</span>
+        <div class="val">T2027jk@gmail.com</div>
+        <span class="arrow">Send mail →</span>
+      </a>
+
+      <a class="channel" href="https://linkedin.com/in/tarek-jarab/" target="_blank" rel="noopener">
+        <span class="lab">/ 02 — LinkedIn · professional</span>
+        <div class="val">linkedin.com/in/tarek-jarab</div>
+        <span class="arrow">Open profile →</span>
+      </a>
+
+      <a class="channel" href="https://github.com/Tcroco27" target="_blank" rel="noopener">
+        <span class="lab">/ 03 — GitHub · code</span>
+        <div class="val">github.com/Tcroco27</div>
+        <span class="arrow">View code →</span>
+      </a>
+
+      <a class="channel" href="https://tcroco27.itch.io/" target="_blank" rel="noopener">
+        <span class="lab">/ 04 — Itch.io · playable builds</span>
+        <div class="val">tcroco27.itch.io</div>
+        <span class="arrow">Play games →</span>
+      </a>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
+<section class="resume">
+  <div class="wrap">
+    <a class="resume-card" href="Data/TareksResume.pdf" download>
+      <div>
+        <h3>Want the <em>full background?</em></h3>
+        <p>One-page resume — projects, experience, education, certifications.</p>
+      </div>
+      <span class="btn primary">Download resume <span>↓</span></span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tarek El Jarab · Toronto, ON</span>
+    <span><a href="index.html">Index</a> · <a href="projects.html">Work</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
   <section class="contact-section section">
     <div class="container">
       <div class="contact-grid">
