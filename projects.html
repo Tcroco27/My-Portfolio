@@ -1,230 +1,481 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Tarek el Jarab</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Work — Tarek El Jarab</title>
+<meta name="description" content="Selected projects from Tarek El Jarab — Unreal Engine 5 and Unity games, shipped on Itch.io and Game Jolt." />
+<meta name="theme-color" content="#0E0E10" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #0E0E10;
+    --bg-2: #16161A;
+    --fg: #EDE7D9;
+    --fg-dim: #A8A399;
+    --line: #2A2A2E;
+    --accent: #E2553A;
+    --accent-soft: #FFB59E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Public Sans", system-ui, sans-serif;
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 1000;
+    opacity: 0.035; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+  .display { font-family: "Fraunces", serif; }
+  .mono {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-size: 11px; font-weight: 500;
+  }
+  .label {
+    color: var(--fg-dim);
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    font-size: 10px;
+  }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 640px) { .wrap { padding: 0 20px; } }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(14,14,16,0.78);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: baseline; gap: 12px; }
+  .brand .mark { font-family: "Fraunces", serif; font-weight: 600; font-size: 22px; letter-spacing: -0.02em; }
+  .brand .role {
+    color: var(--fg-dim); font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  @media (max-width: 600px) { .brand .role { display: none; } }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a {
+    font-family: "JetBrains Mono", monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--fg-dim); transition: color .25s;
+  }
+  nav ul a:hover, nav ul a.active { color: var(--accent); }
+
+  /* PAGE HEAD */
+  .page-head {
+    padding: 168px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-head .crumb {
+    color: var(--fg-dim); margin-bottom: 24px;
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase; letter-spacing: 0.12em; font-size: 11px;
+  }
+  .page-head h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-variation-settings: "opsz" 144;
+    font-size: clamp(56px, 9vw, 144px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+  }
+  .page-head h1 em { font-style: italic; color: var(--accent); }
+  .page-head p {
+    margin-top: 28px;
+    max-width: 720px;
+    font-size: 18px;
+    color: var(--fg-dim);
+    font-weight: 300;
+  }
+
+  /* CATEGORY HEAD */
+  .cat-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 80px 0 36px;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .cat-head h2 {
+    font-family: "Fraunces", serif; font-weight: 400; font-style: italic;
+    font-size: clamp(32px, 4.5vw, 56px); line-height: 0.95; letter-spacing: -0.025em;
+  }
+
+  /* PROJECT LIST */
+  .project-list {
+    border-top: 1px solid var(--line);
+  }
+  .project {
+    display: grid;
+    grid-template-columns: 100px 1.2fr 1fr 0.7fr;
+    gap: 32px;
+    align-items: stretch;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    transition: background .3s ease;
+  }
+  .project:hover { background: rgba(226,85,58,0.04); }
+  .project .num {
+    color: var(--fg-dim);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    padding-top: 6px;
+  }
+  .project .info h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 500; font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .project .info p {
+    color: var(--fg-dim);
+    font-size: 14.5px; line-height: 1.6;
+    max-width: 520px;
+  }
+  .project .meta {
+    display: flex; flex-direction: column; gap: 12px;
+    padding-top: 6px;
+  }
+  .project .meta span { display: flex; flex-direction: column; gap: 3px; }
+  .project .meta span > b {
+    color: var(--fg); font-weight: 500; font-size: 14px;
+  }
+  .project .image {
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    align-self: start;
+  }
+  .project .image img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .8s cubic-bezier(.2,.8,.2,1);
+  }
+  .project:hover .image img { transform: scale(1.06); }
+  .project .play {
+    position: absolute;
+    right: 0; top: 32px;
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .project .play .arrow { transition: transform .25s; display: inline-block; margin-left: 6px; }
+  .project:hover .play .arrow { transform: translateX(6px); }
+
+  @media (max-width: 980px) {
+    .project {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .project .num {
+      grid-column: 1 / span 2;
+      padding-bottom: 0;
+    }
+    .project .info { grid-column: 1; }
+    .project .meta { grid-column: 1; }
+    .project .image { grid-column: 2; grid-row: 2 / span 2; }
+    .project .play { position: static; grid-column: 1 / span 2; }
+  }
+  @media (max-width: 600px) {
+    .project { grid-template-columns: 1fr; }
+    .project .num, .project .info, .project .meta, .project .image, .project .play { grid-column: 1; }
+    .project .image { aspect-ratio: 16/10; grid-row: auto; }
+  }
+
+  .role-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 14px;
+    border-radius: 2px;
+  }
+  .role-tag.solo { border-color: var(--fg-dim); color: var(--fg-dim); }
+  .role-tag.team { border-color: var(--fg); color: var(--fg); }
+
+  /* CTA */
+  section.cta {
+    padding: 140px 0 160px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    margin-top: 64px;
+  }
+  .cta h2 {
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-size: clamp(40px, 6vw, 88px); line-height: 0.95;
+    letter-spacing: -0.03em; max-width: 900px; margin: 0 auto;
+  }
+  .cta h2 em { font-style: italic; color: var(--accent); }
+  .cta-actions {
+    display: flex; gap: 16px; justify-content: center;
+    margin-top: 40px; flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border: 1px solid var(--fg); color: var(--fg);
+    font-family: "JetBrains Mono", monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.12em; transition: all .25s;
+  }
+  .btn:hover { background: var(--fg); color: var(--bg); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn.primary:hover { background: transparent; color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 0 56px;
+  }
+  footer .wrap {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    color: var(--fg-dim); font-family: "JetBrains Mono", monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  footer a:hover { color: var(--accent); }
+
+  .reveal { opacity: 0; transform: translateY(20px); animation: rise .9s ease forwards; }
+  .reveal.d1 { animation-delay: .05s; }
+  .reveal.d2 { animation-delay: .15s; }
+  .reveal.d3 { animation-delay: .3s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+</style>
 </head>
 <body>
 
-  <div class="noise"></div>
-  <div class="scanlines"></div>
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark">Tarek El Jarab</span><span class="role">UE5 / Gameplay</span></a>
+    <ul>
+      <li><a href="index.html">Index</a></li>
+      <li><a href="projects.html" class="active">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">T<span>.</span></a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="projects.html" class="nav-link active">Projects</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-  </nav>
+<header class="page-head">
+  <div class="wrap">
+    <div class="crumb reveal d1">— Selected work · 2021 → 2026</div>
+    <h1 class="reveal d2">Work,<br/><em>shipped.</em></h1>
+    <p class="reveal d3">Eight published titles across four years. Two led, four collaborated, two solo. Click through to play any of them — every project below has a public build.</p>
+  </div>
+</header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container">
-      <p class="hero-eyebrow">— Portfolio</p>
-      <h1 class="page-title">SHIPPED <span>WORK</span></h1>
-      <p class="page-subtitle">8 games. Multiple teams. One goal — make something memorable.</p>
-    </div>
-  </section>
+<div class="wrap">
 
-  <!-- FEATURED PROJECT -->
-  <section class="featured section">
-    <div class="container">
-      <div class="section-label">— Featured / Latest</div>
-      <div class="featured-card">
-        <div class="featured-img-wrap">
-          <img src="Data/Cattlemenas.png" alt="CattleMan's Crossing" class="featured-img">
-          <div class="featured-badge">Capstone 2025</div>
-        </div>
-        <div class="featured-info">
-          <h2 class="featured-title">CATTLEMAN'S CROSSING</h2>
-          <div class="project-meta">
-            <span class="tag">Unreal Engine 5</span>
-            <span class="tag">Team Lead</span>
-            <span class="tag">6-Person Team</span>
-            <span class="tag">Itch.io</span>
-          </div>
-          <p>The culmination of my degree — a fully-fledged game built with a team of 6 across the 2024/2025 academic year as a Capstone Project. Released on Itch.io on April 15, 2025.</p>
-          <a href="https://riordan-palmer.itch.io/cattlemans-crossing" target="_blank" class="btn-primary">Play on Itch.io →</a>
-        </div>
+  <div class="cat-head">
+    <h2>Game projects</h2>
+    <span class="label">/ 08 titles · UE5, Unity, Bitsy</span>
+  </div>
+
+  <div class="project-list">
+
+    <a class="project" href="https://riordan-palmer.itch.io/cattlemans-crossing" target="_blank" rel="noopener">
+      <div class="num">/01</div>
+      <div class="info">
+        <span class="role-tag">Lead Developer</span>
+        <h3>Cattleman's Crossing</h3>
+        <p>Year-long York University capstone shipped publicly on Itch.io and demoed at the Level Up Showcase 2026 in Toronto. Owned core gameplay systems, weekly milestones, and final integration across a six-person team.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- GAME PROJECTS GRID -->
-  <section class="projects-section section">
-    <div class="container">
-      <div class="section-label">— Game Development</div>
-      <h2 class="section-heading">ALL <span>PROJECTS</span></h2>
-
-      <div class="projects-grid">
-
-        <a href="https://delyy.itch.io/graverunner" target="_blank" class="project-card">
-          <div class="project-card-img">
-            <img src="Data/Grave Runner.png" alt="Grave Runner">
-            <div class="project-card-overlay">
-              <span>Play Project →</span>
-            </div>
-          </div>
-          <div class="project-card-body">
-            <h3>Grave Runner</h3>
-            <div class="project-meta">
-              <span class="tag">UE5</span>
-              <span class="tag">Team Project</span>
-            </div>
-            <p>A dual-variant UE5 game — Boss Rush (Diggers) and Boss Run (Runners). Built with a team in under a month, delivering two complete game variants.</p>
-          </div>
-        </a>
-
-        <a href="https://riordan-palmer.itch.io/dissolution" target="_blank" class="project-card">
-          <div class="project-card-img">
-            <img src="Data/Dissoulution.png" alt="Dissolution">
-            <div class="project-card-overlay">
-              <span>Play Project →</span>
-            </div>
-          </div>
-          <div class="project-card-body">
-            <h3>Dissolution</h3>
-            <div class="project-meta">
-              <span class="tag">UE5</span>
-              <span class="tag">Walking Sim</span>
-            </div>
-            <p>A short first-person experience about exploration and mystery. Features unique level interactions and a narrative about a man coming to terms with his existence.</p>
-          </div>
-        </a>
-
-        <a href="https://delyy.itch.io/sneaky-slumbers" target="_blank" class="project-card">
-          <div class="project-card-img">
-            <img src="Data/Sneaky Slumber.png" alt="Sneaky Slumbers">
-            <div class="project-card-overlay">
-              <span>Play Project →</span>
-            </div>
-          </div>
-          <div class="project-card-body">
-            <h3>Sneaky Slumbers</h3>
-            <div class="project-meta">
-              <span class="tag">UE5</span>
-              <span class="tag">Stealth</span>
-            </div>
-            <p>Stealth game set in a dystopian orphanage. Evade security guards by pretending to sleep — a creative mechanic born from a university passion project.</p>
-          </div>
-        </a>
-
-        <a href="https://gamejolt.com/games/HorrorHuggerProl/914352" target="_blank" class="project-card">
-          <div class="project-card-img">
-            <img src="Data/WtuLan.png" alt="HorrorHugger">
-            <div class="project-card-overlay">
-              <span>Play Project →</span>
-            </div>
-          </div>
-          <div class="project-card-body">
-            <h3>HorrorHugger</h3>
-            <div class="project-meta">
-              <span class="tag">UE5</span>
-              <span class="tag">Team Lead</span>
-              <span class="tag">GameJolt</span>
-            </div>
-            <p>Led a team of 6 to build a full story game about a King who must save his people. Features hand-crafted mazes and a unique hug-and-shove combat mechanic.</p>
-          </div>
-        </a>
-
-        <a href="https://crocostar27.itch.io/walks-on-your-skin-prologue" target="_blank" class="project-card">
-          <div class="project-card-img">
-            <img src="Data/WOYS P.png" alt="Walks on Your Skin">
-            <div class="project-card-overlay">
-              <span>Play Project →</span>
-            </div>
-          </div>
-          <div class="project-card-body">
-            <h3>Walks on Your Skin</h3>
-            <div class="project-meta">
-              <span class="tag">UE5</span>
-              <span class="tag">Horror</span>
-              <span class="tag">Solo</span>
-            </div>
-            <p>My UE5 origin project — a forest horror walking simulator built for DATT3300. This is where my love for Unreal began.</p>
-          </div>
-        </a>
-
-        <a href="https://tcroco27.itch.io/bugzy-ninja" target="_blank" class="project-card">
-          <div class="project-card-img">
-            <img src="Data/Bugzy Ninja.png" alt="Bugzy Ninja">
-            <div class="project-card-overlay">
-              <span>Play Project →</span>
-            </div>
-          </div>
-          <div class="project-card-body">
-            <h3>Bugzy Ninja</h3>
-            <div class="project-meta">
-              <span class="tag">Unity</span>
-              <span class="tag">Runner</span>
-              <span class="tag">Solo</span>
-            </div>
-            <p>My first Unity game — a score-chasing runner where a ninja races to escape a giant bug. Where my game dev journey began.</p>
-          </div>
-        </a>
-
-        <a href="https://tcroco27.itch.io/choppers-rampage" target="_blank" class="project-card">
-          <div class="project-card-img">
-            <img src="Data/Choppers Rampage.png" alt="Choppers Rampage">
-            <div class="project-card-overlay">
-              <span>Play Project →</span>
-            </div>
-          </div>
-          <div class="project-card-body">
-            <h3>Chopper's Rampage</h3>
-            <div class="project-meta">
-              <span class="tag">Bitsy</span>
-              <span class="tag">Horror</span>
-              <span class="tag">First Game</span>
-            </div>
-            <p>My very first published game. A minimalist horror story built in Bitsy about a man haunted by a serial killer. Where it all started.</p>
-          </div>
-        </a>
-
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Unreal Engine 5</b></span>
+        <span><span class="mono">Team</span><b>6 students</b></span>
+        <span><span class="mono">Year</span><b>2025 → 2026</b></span>
+        <span><span class="mono">Platform</span><b>Itch.io</b></span>
       </div>
-    </div>
-  </section>
+      <div class="image"><img src="Data/Cattlemenas.png" alt="Cattleman's Crossing screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
 
-  <!-- OTHER PROJECTS -->
-  <section class="other-section section">
-    <div class="container">
-      <div class="section-label">— Beyond Games</div>
-      <h2 class="section-heading">OTHER <span>WORK</span></h2>
-      <div class="other-card">
-        <img src="Data/Focus Fiends.png" alt="Focus Fiends" class="other-img">
-        <div class="other-info">
-          <h3>Focus Fiends — Startup Web App</h3>
-          <div class="project-meta">
-            <span class="tag">Wix</span>
-            <span class="tag">Canva</span>
-            <span class="tag">DATT2100</span>
-          </div>
-          <p>A startup website for a productivity app that helps users focus away from devices alongside a friend or creature for motivation. Built for a Digital Media Publishing course.</p>
-          <a href="https://t2002jk.wixsite.com/focusfiends" target="_blank" class="btn-secondary">Visit Site →</a>
-        </div>
+    <a class="project" href="https://gamejolt.com/games/HorrorHuggerProl/914352" target="_blank" rel="noopener">
+      <div class="num">/02</div>
+      <div class="info">
+        <span class="role-tag">Lead Developer</span>
+        <h3>HorrorHugger</h3>
+        <p>A story-driven UE5 maze game I led from concept through ship across one semester. Designed and implemented the signature "hug &amp; shove" combat mechanic and a series of hand-built mazes, while running sprint reviews for the five-person team.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-name">Tarek el Jarab</span>
-      <span class="footer-copy">&copy; 2025 · All rights reserved</span>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Unreal Engine 5</b></span>
+        <span><span class="mono">Team</span><b>5 students</b></span>
+        <span><span class="mono">Year</span><b>2024</b></span>
+        <span><span class="mono">Platform</span><b>Game Jolt</b></span>
       </div>
-    </div>
-  </footer>
+      <div class="image"><img src="Data/WtuLan.png" alt="HorrorHugger screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
 
-  <script src="script.js"></script>
+    <a class="project" href="https://delyy.itch.io/graverunner" target="_blank" rel="noopener">
+      <div class="num">/03</div>
+      <div class="info">
+        <span class="role-tag team">Team</span>
+        <h3>Grave Runner</h3>
+        <p>Two genre variants of one core game shipped in a single one-month dev cycle: a Boss Rush "Diggers" mode and a Boss Run "Runners" mode. Built variant-specific gameplay loops and contributed to procedurally varied level content.</p>
+      </div>
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Unreal Engine 5</b></span>
+        <span><span class="mono">Role</span><b>Gameplay Programmer</b></span>
+        <span><span class="mono">Year</span><b>2024</b></span>
+        <span><span class="mono">Platform</span><b>Itch.io</b></span>
+      </div>
+      <div class="image"><img src="Data/Grave Runner.png" alt="Grave Runner screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
+
+    <a class="project" href="https://riordan-palmer.itch.io/dissolution" target="_blank" rel="noopener">
+      <div class="num">/04</div>
+      <div class="info">
+        <span class="role-tag team">Team</span>
+        <h3>Dissolution</h3>
+        <p>A short first-person experience about exploring unique levels and finding new ways of interacting with the world. Built around environmental storytelling and the brief ruminations of a man coming to terms with his existence.</p>
+      </div>
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Unreal Engine 5</b></span>
+        <span><span class="mono">Role</span><b>Team contributor</b></span>
+        <span><span class="mono">Year</span><b>2023 → 2024</b></span>
+        <span><span class="mono">Platform</span><b>Itch.io</b></span>
+      </div>
+      <div class="image"><img src="Data/Dissoulution.png" alt="Dissolution screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
+
+    <a class="project" href="https://delyy.itch.io/sneaky-slumbers" target="_blank" rel="noopener">
+      <div class="num">/05</div>
+      <div class="info">
+        <span class="role-tag team">Team</span>
+        <h3>Sneaky Slumbers</h3>
+        <p>A passion project for a York University course — sneak through security guards in a dystopian orphanage by pretending to sleep or snore. UE5 stealth mechanics, audio-driven AI states.</p>
+      </div>
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Unreal Engine 5</b></span>
+        <span><span class="mono">Role</span><b>Team contributor</b></span>
+        <span><span class="mono">Year</span><b>2023</b></span>
+        <span><span class="mono">Platform</span><b>Itch.io</b></span>
+      </div>
+      <div class="image"><img src="Data/Sneaky Slumber.png" alt="Sneaky Slumbers screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
+
+    <a class="project" href="https://crocostar27.itch.io/walks-on-your-skin-prologue" target="_blank" rel="noopener">
+      <div class="num">/06</div>
+      <div class="info">
+        <span class="role-tag solo">Solo</span>
+        <h3>Walks on Your Skin: Prologue</h3>
+        <p>A solo first-person narrative experience — a murder mystery set in a forest. Built for DATT 3300; the project that introduced me to Unreal Engine and which I later adjusted into a walking simulator. Player controller, narrative triggers, and ambient audio system, all my own.</p>
+      </div>
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Unreal Engine 5</b></span>
+        <span><span class="mono">Role</span><b>Solo developer</b></span>
+        <span><span class="mono">Year</span><b>2023</b></span>
+        <span><span class="mono">Platform</span><b>Itch.io</b></span>
+      </div>
+      <div class="image"><img src="Data/WOYS P.png" alt="Walks on Your Skin screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
+
+    <a class="project" href="https://tcroco27.itch.io/bugzy-ninja" target="_blank" rel="noopener">
+      <div class="num">/07</div>
+      <div class="info">
+        <span class="role-tag solo">Solo</span>
+        <h3>Bugzy Ninja</h3>
+        <p>My first published Unity game — a small ninja running from a giant bug, collecting items for score and powerups. First end-to-end ship-to-storefront experience.</p>
+      </div>
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Unity (C#)</b></span>
+        <span><span class="mono">Role</span><b>Solo developer</b></span>
+        <span><span class="mono">Year</span><b>2022</b></span>
+        <span><span class="mono">Platform</span><b>Itch.io</b></span>
+      </div>
+      <div class="image"><img src="Data/Bugzy Ninja.png" alt="Bugzy Ninja screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
+
+    <a class="project" href="https://tcroco27.itch.io/choppers-rampage" target="_blank" rel="noopener">
+      <div class="num">/08</div>
+      <div class="info">
+        <span class="role-tag solo">Solo</span>
+        <h3>Chopper's Rampage</h3>
+        <p>The first game I ever made and published. Built in Bitsy as a simple narrative horror — a man tormented by a serial killer. The shipping experience that started it all.</p>
+      </div>
+      <div class="meta">
+        <span><span class="mono">Engine</span><b>Bitsy</b></span>
+        <span><span class="mono">Role</span><b>Solo developer</b></span>
+        <span><span class="mono">Year</span><b>2021</b></span>
+        <span><span class="mono">Platform</span><b>Itch.io</b></span>
+      </div>
+      <div class="image"><img src="Data/Choppers Rampage.png" alt="Chopper's Rampage screenshot" loading="lazy"/></div>
+      <span class="play">Play <span class="arrow">→</span></span>
+    </a>
+
+  </div>
+
+  <div class="cat-head">
+    <h2>Other work</h2>
+    <span class="label">/ Web · interaction · startup</span>
+  </div>
+
+  <div class="project-list">
+
+    <a class="project" href="https://t2002jk.wixsite.com/focusfiends" target="_blank" rel="noopener">
+      <div class="num">/01</div>
+      <div class="info">
+        <span class="role-tag team">Team</span>
+        <h3>Focus Fiends</h3>
+        <p>Startup web app site for a productivity-focus app I designed for DATT 2100 (Publishing in Digital Media). Built in Wix with custom assets and a video animation in Canva — a social-focus tool that pairs you with a friend or creature for accountability.</p>
+      </div>
+      <div class="meta">
+        <span><span class="mono">Stack</span><b>Wix · Canva</b></span>
+        <span><span class="mono">Role</span><b>Lead designer</b></span>
+        <span><span class="mono">Year</span><b>2023</b></span>
+        <span><span class="mono">Course</span><b>DATT 2100</b></span>
+      </div>
+      <div class="image"><img src="Data/Focus Fiends.png" alt="Focus Fiends startup site" loading="lazy"/></div>
+      <span class="play">Visit <span class="arrow">→</span></span>
+    </a>
+
+  </div>
+</div>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>That's the work.<br/>Want to <em>talk?</em></h2>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn primary">Get in touch</a>
+      <a href="Data/TareksResume.pdf" class="btn" download>Download resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tarek El Jarab</span>
+    <span><a href="https://tcroco27.itch.io/" target="_blank" rel="noopener">itch.io</a> · <a href="https://gamejolt.com/" target="_blank" rel="noopener">Game Jolt</a> · <a href="https://github.com/Tcroco27" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
