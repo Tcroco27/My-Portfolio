@@ -148,6 +148,32 @@
     });
   }
 
+
+  /* ---------- Custom crosshair cursor ---------- */
+  if (finePointer && !reduce) {
+    var root = document.documentElement;
+    var dot = document.createElement('div'), ring = document.createElement('div');
+    dot.className = 'cur-dot'; ring.className = 'cur-ring';
+    document.body.appendChild(ring); document.body.appendChild(dot);
+    root.classList.add('has-cursor');
+    var mx = -100, my = -100, rx = mx, ry = my;
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px)';
+      root.classList.add('cursor-on');
+      var hit = e.target.closest && e.target.closest('a, button, .card, .channel');
+      root.classList.toggle('cursor-hover', !!hit);
+    }, { passive: true });
+    document.addEventListener('mouseleave', function () { root.classList.remove('cursor-on'); });
+    document.addEventListener('mousedown', function () { root.classList.add('cursor-down'); });
+    document.addEventListener('mouseup', function () { root.classList.remove('cursor-down'); });
+    (function follow() {
+      rx += (mx - rx) * 0.2; ry += (my - ry) * 0.2;
+      ring.style.transform = 'translate(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px)';
+      requestAnimationFrame(follow);
+    })();
+  }
+
   /* ---------- Work page filters ---------- */
   var fbar = document.querySelector('.filters');
   if (fbar) {

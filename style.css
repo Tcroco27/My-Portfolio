@@ -425,3 +425,26 @@ footer .label a:hover { color: var(--accent); }
   .timeline div::before { transform: scaleX(1); transition: none; }
   .flashlight { display: none; }
 }
+
+/* Custom crosshair cursor (desktop only; enabled by JS) */
+html.has-cursor, html.has-cursor * { cursor: none !important; }
+.cur-dot, .cur-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 3000; opacity: 0; transition: opacity .2s; }
+html.cursor-on .cur-dot, html.cursor-on .cur-ring { opacity: 1; }
+.cur-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px rgba(229,56,59,.8); }
+.cur-ring {
+  width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%;
+  border: 1px solid rgba(236,230,220,.55);
+  transition: opacity .2s, width .25s ease, height .25s ease, margin .25s ease, border-color .25s, background .25s;
+}
+.cur-ring::before, .cur-ring::after { /* crosshair ticks */
+  content: ""; position: absolute; background: rgba(236,230,220,.55); transition: opacity .2s;
+}
+.cur-ring::before { left: 50%; top: -7px; bottom: -7px; width: 1px; margin-left: -.5px;
+  -webkit-mask: linear-gradient(#000 0 7px, transparent 7px calc(100% - 7px), #000 calc(100% - 7px));
+          mask: linear-gradient(#000 0 7px, transparent 7px calc(100% - 7px), #000 calc(100% - 7px)); }
+.cur-ring::after { top: 50%; left: -7px; right: -7px; height: 1px; margin-top: -.5px;
+  -webkit-mask: linear-gradient(to right, #000 0 7px, transparent 7px calc(100% - 7px), #000 calc(100% - 7px));
+          mask: linear-gradient(to right, #000 0 7px, transparent 7px calc(100% - 7px), #000 calc(100% - 7px)); }
+html.cursor-hover .cur-ring { width: 64px; height: 64px; margin: -32px 0 0 -32px; border-color: var(--accent); background: rgba(229,56,59,.08); }
+html.cursor-hover .cur-ring::before, html.cursor-hover .cur-ring::after { opacity: 0; }
+html.cursor-down .cur-ring { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
