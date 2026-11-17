@@ -3,534 +3,28 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Tarek El Jarab — Unreal Engine 5 Developer</title>
-<meta name="description" content="Tarek El Jarab — Unreal Engine 5 developer based in Toronto. Eight publicly released games, C++ AI and online multiplayer, York University Digital Media Game Development graduate (2026)." />
-<meta name="theme-color" content="#0E0E10" />
-
-<!-- Open Graph -->
-<meta property="og:title" content="Tarek El Jarab — Unreal Engine 5 Developer" />
-<meta property="og:description" content="Toronto-based UE5 developer. Eight released games, solo developer of co-op horror game Project Orca. Open to roles across Canada." />
+<title>Tarek El Jarab | Unreal Engine 5 Gameplay Programmer</title>
+<meta name="description" content="Tarek El Jarab is a Toronto-based Unreal Engine 5 gameplay programmer working in C++ and Blueprints. Eight released games and an original co-op horror game in development." />
+<meta name="theme-color" content="#0A0A0B" />
+<meta property="og:title" content="Tarek El Jarab | Unreal Engine 5 Gameplay Programmer" />
+<meta property="og:description" content="UE5 gameplay programmer (C++ and Blueprints). Eight released games and Project Orca, an original co-op horror game in development." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="Data/Coverpic.jpg" />
-
+<meta property="og:image" content="https://tcroco27.github.io/My-Portfolio/Data/web/hero-grave-digger.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-<style>
-  :root {
-    --bg: #0E0E10;
-    --bg-2: #16161A;
-    --fg: #EDE7D9;
-    --fg-dim: #A8A399;
-    --line: #2A2A2E;
-    --accent: #39FF14;
-    --accent-soft: #AAFF80;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: "Public Sans", system-ui, sans-serif;
-    font-weight: 400;
-    line-height: 1.55;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    overflow-x: hidden;
-  }
-
-  /* Subtle film-grain texture */
-  body::before {
-    content: "";
-    position: fixed; inset: 0;
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.035;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
-  }
-
-  a { color: inherit; text-decoration: none; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
-
-  /* ==================== TYPE ==================== */
-  .display {
-    font-family: "Fraunces", "Times New Roman", serif;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
-    font-variation-settings: "opsz" 144;
-  }
-  .mono {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 11px;
-    font-weight: 500;
-  }
-  .label {
-    color: var(--fg-dim);
-    font-family: "JetBrains Mono", monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 10px;
-    font-weight: 500;
-  }
-
-  /* ==================== LAYOUT ==================== */
-  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
-  @media (max-width: 640px) { .wrap { padding: 0 20px; } }
-
-  /* ==================== NAV ==================== */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgba(14,14,16,0.78);
-    border-bottom: 1px solid var(--line);
-  }
-  nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-  }
-  .brand {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
-  .brand .mark {
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-  }
-  .brand .role {
-    color: var(--fg-dim);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  @media (max-width: 600px) { .brand .role { display: none; } }
-  nav ul { display: flex; gap: 28px; list-style: none; }
-  nav ul a {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--fg-dim);
-    transition: color .25s;
-  }
-  nav ul a:hover, nav ul a.active { color: var(--accent); }
-
-  /* ==================== HERO ==================== */
-  header.hero {
-    padding: 168px 0 96px;
-    border-bottom: 1px solid var(--line);
-    position: relative;
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .status-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 36px;
-    flex-wrap: wrap;
-  }
-  .status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    border-radius: 999px;
-    font-family: "JetBrains Mono", monospace;
-    text-transform: uppercase;
-    font-size: 10.5px;
-    letter-spacing: 0.12em;
-  }
-  .status-pill::before {
-    content: "";
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent);
-    animation: blink 2s ease-in-out infinite;
-  }
-  @keyframes blink {
-    0%,100% { opacity: 1; }
-    50% { opacity: 0.35; }
-  }
-  .meta-strip {
-    color: var(--fg-dim);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  h1.name {
-    font-family: "Fraunces", serif;
-    font-weight: 400;
-    font-variation-settings: "opsz" 144;
-    font-size: clamp(56px, 10vw, 156px);
-    line-height: 0.92;
-    letter-spacing: -0.035em;
-  }
-  h1.name em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--accent);
-  }
-
-  .hero-tag {
-    margin-top: 28px;
-    max-width: 720px;
-    font-size: clamp(18px, 1.4vw, 22px);
-    font-weight: 300;
-    color: var(--fg);
-    line-height: 1.45;
-  }
-  .hero-tag strong { font-weight: 600; }
-
-  .hero-actions {
-    display: flex;
-    gap: 16px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 22px;
-    border: 1px solid var(--fg);
-    color: var(--fg);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    transition: all .25s ease;
-    cursor: pointer;
-  }
-  .btn:hover {
-    background: var(--fg);
-    color: var(--bg);
-  }
-  .btn.primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--bg);
-  }
-  .btn.primary:hover {
-    background: transparent;
-    color: var(--accent);
-  }
-  .btn .arrow { transition: transform .25s ease; }
-  .btn:hover .arrow { transform: translateX(4px); }
-
-  /* Stat row */
-  .stat-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 80px;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .stat {
-    padding: 28px 24px 28px 0;
-    border-right: 1px solid var(--line);
-  }
-  .stat:last-child { border-right: 0; }
-  .stat .num {
-    font-family: "Fraunces", serif;
-    font-weight: 400;
-    font-variation-settings: "opsz" 144;
-    font-size: 64px;
-    line-height: 1;
-    letter-spacing: -0.04em;
-  }
-  .stat .num em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .stat .lab { margin-top: 10px; }
-  @media (max-width: 880px) {
-    .stat-row { grid-template-columns: repeat(2, 1fr); }
-    .stat:nth-child(2) { border-right: 0; }
-    .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
-    .stat .num { font-size: 48px; }
-  }
-
-  /* ==================== ABOUT ==================== */
-  section.about {
-    padding: 120px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 96px;
-    align-items: start;
-  }
-  @media (max-width: 880px) {
-    .about-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
-  .section-tag {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-top: 8px;
-  }
-  .section-tag::before {
-    content: "";
-    width: 28px; height: 1px; background: var(--accent);
-  }
-  .about-body p {
-    font-size: 19px;
-    line-height: 1.6;
-    margin-bottom: 22px;
-    max-width: 680px;
-    font-weight: 300;
-  }
-  .about-body p strong { font-weight: 600; color: var(--fg); }
-  .about-body em.accent {
-    font-style: normal;
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  /* ==================== FEATURED ==================== */
-  section.featured {
-    padding: 120px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .feature-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 56px;
-  }
-  .feature-head h2 {
-    font-family: "Fraunces", serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: clamp(40px, 6vw, 84px);
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-  }
-  .feature-card {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 0;
-    border: 1px solid var(--line);
-    background: var(--bg-2);
-    overflow: hidden;
-    transition: border-color .3s ease;
-  }
-  .feature-card:hover { border-color: var(--accent); }
-  @media (max-width: 880px) {
-    .feature-card { grid-template-columns: 1fr; }
-  }
-  .feature-image {
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    background: #000;
-    position: relative;
-  }
-  .feature-image img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform .8s cubic-bezier(.2,.8,.2,1);
-  }
-  .feature-card:hover .feature-image img { transform: scale(1.04); }
-  .feature-body {
-    padding: 48px 44px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 32px;
-  }
-  @media (max-width: 880px) { .feature-body { padding: 32px 24px; } }
-  .feature-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px 24px;
-    color: var(--fg-dim);
-  }
-  .feature-meta span { display: flex; flex-direction: column; gap: 4px; }
-  .feature-meta span > b {
-    color: var(--fg);
-    font-weight: 500;
-    font-family: "Public Sans";
-    font-size: 14px;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-  .feature-title {
-    font-family: "Fraunces", serif;
-    font-weight: 500;
-    font-size: clamp(32px, 4vw, 52px);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    margin: 16px 0 18px;
-  }
-  .feature-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--fg-dim);
-    max-width: 460px;
-  }
-  .feature-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--accent);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    align-self: flex-start;
-  }
-  .feature-cta:hover .arrow { transform: translateX(6px); }
-  .feature-cta .arrow { transition: transform .25s; }
-
-  /* ==================== TECH ==================== */
-  section.tech {
-    padding: 120px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .tech-grid {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 96px;
-    align-items: start;
-  }
-  @media (max-width: 880px) {
-    .tech-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
-  .tech-blocks {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 56px 64px;
-  }
-  @media (max-width: 720px) { .tech-blocks { grid-template-columns: 1fr; gap: 32px; } }
-  .tech-block h3 {
-    font-family: "Fraunces", serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 22px;
-    margin-bottom: 14px;
-    color: var(--accent);
-  }
-  .tech-block ul {
-    list-style: none;
-    border-top: 1px solid var(--line);
-  }
-  .tech-block li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-  }
-  .tech-block li b { font-weight: 500; }
-  .tech-block li span {
-    color: var(--fg-dim);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  /* ==================== CTA ==================== */
-  section.cta {
-    padding: 140px 0 160px;
-    text-align: center;
-  }
-  .cta h2 {
-    font-family: "Fraunces", serif;
-    font-weight: 400;
-    font-size: clamp(48px, 8vw, 120px);
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .cta h2 em { font-style: italic; color: var(--accent); }
-  .cta-actions {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    margin-top: 48px;
-    flex-wrap: wrap;
-  }
-
-  /* ==================== FOOTER ==================== */
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 48px 0 56px;
-  }
-  footer .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    color: var(--fg-dim);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  footer a:hover { color: var(--accent); }
-
-  /* ==================== ANIM ==================== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: rise .9s ease forwards;
-  }
-  .reveal.d1 { animation-delay: .05s; }
-  .reveal.d2 { animation-delay: .15s; }
-  .reveal.d3 { animation-delay: .28s; }
-  .reveal.d4 { animation-delay: .42s; }
-  .reveal.d5 { animation-delay: .58s; }
-  @keyframes rise {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { animation: none; opacity: 1; transform: none; }
-    .status-pill::before { animation: none; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <nav>
   <div class="wrap">
     <a href="index.html" class="brand" aria-label="Home">
-      <span class="mark">Tarek El Jarab</span>
-      <span class="role">UE5 / Gameplay</span>
+      <span class="mark">Tarek El Jarab<span>.</span></span>
+      <span class="role">UE5 Gameplay Programmer</span>
     </a>
     <ul>
-      <li><a href="index.html" class="active">Index</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="projects.html">Work</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -538,155 +32,209 @@
 </nav>
 
 <header class="hero">
+  <div class="hero-bg"><img src="Data/web/hero-grave-digger.jpg" alt="" /></div>
   <div class="wrap">
-
-    <div class="status-row reveal d1">
-      <span class="status-pill">Available · Toronto, ON</span>
-      <span class="meta-strip">Eligible to work in Canada · On-site, hybrid or remote</span>
-      <span class="meta-strip">Class of 2026 · York University</span>
+    <div class="kicker reveal">
+      <span class="pill">Open to work</span>
+      <span class="label">Toronto, ON · Eligible to work in Canada</span>
     </div>
-
-    <h1 class="name reveal d2">Tarek<br/><em>El Jarab.</em></h1>
-
-    <p class="hero-tag reveal d3">
-      Unreal Engine 5 gameplay programmer with <strong>eight publicly released games</strong>, now solo-building <strong>Project Orca</strong>, an original co-op horror game with a C++ AI hunter and online multiplayer. Looking for a junior gameplay, technical design, or Unreal generalist role at a Canadian studio.
+    <h1 class="h-display reveal">Tarek<span>El Jarab</span></h1>
+    <p class="lede reveal">
+      Unreal Engine 5 gameplay programmer working in <strong>C++ and Blueprints</strong>. I have released <strong>eight games</strong> and I'm currently building <strong>Project Orca</strong>, an original co-op horror game with an adaptive AI hunter and online multiplayer.
     </p>
-
-    <div class="hero-actions reveal d4">
-      <a href="projects.html" class="btn primary">View work <span class="arrow">→</span></a>
-      <a href="Data/Tarek_El_Jarab_Resume.pdf" class="btn" download>Download resume</a>
-      <a href="contact.html" class="btn">Get in touch</a>
-    </div>
-
-    <div class="stat-row reveal d5">
-      <div class="stat">
-        <div class="num">08</div>
-        <div class="lab label">Shipped titles</div>
-      </div>
-      <div class="stat">
-        <div class="num"><em>01</em></div>
-        <div class="lab label">Game in development</div>
-      </div>
-      <div class="stat">
-        <div class="num">UE5</div>
-        <div class="lab label">C++ + Blueprints</div>
-      </div>
-      <div class="stat">
-        <div class="num">2026</div>
-        <div class="lab label">Hons. Game Dev</div>
-      </div>
+    <div class="actions reveal">
+      <a href="projects.html" class="btn primary">View my work <span class="arrow">→</span></a>
+      <a href="Data/Tarek_El_Jarab_Resume.pdf" class="btn" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
   </div>
+  <span class="caption label">Pictured: Grave Runner, UE5</span>
 </header>
 
-<section class="about" id="about">
+<div class="wrap">
+  <div class="stats">
+    <div class="stat reveal"><div class="num">08</div><span class="label">Released games</span></div>
+    <div class="stat reveal"><div class="num"><em>UE5</em></div><span class="label">C++ + Blueprints</span></div>
+    <div class="stat reveal"><div class="num">05</div><span class="label">Person team led</span></div>
+    <div class="stat reveal"><div class="num">2026</div><span class="label">York U · Game Dev Hons.</span></div>
+  </div>
+</div>
+
+<section class="block" id="now">
   <div class="wrap">
-    <div class="about-grid">
-      <div class="section-tag mono">— About</div>
-      <div class="about-body">
+    <div class="sec-head reveal">
+      <div>
+        <span class="label red">Now building · Jan 2026 to present</span>
+        <h2 class="h-display">In development</h2>
+      </div>
+    </div>
+
+    <div class="orca reveal">
+      <div class="orca-main">
+        <span class="label red">Solo project · Unreal Engine 5 · PC / Steam target</span>
+        <h3 class="h-display">Project Orca</h3>
+        <div class="sub">Co-op asymmetric horror</div>
         <p>
-          I build games in <em class="accent">Unreal Engine 5</em>. I've released eight games solo and in teams, and since January 2026 I've been solo-developing <strong>Project Orca</strong>, a co-op asymmetric horror game. One player solves puzzles and escapes while an adaptive AI Hunter, written in C++ and Blueprints with behaviour trees, stalks them. Online co-op runs on Unreal's replication system.
+          One player, the Runner, has to solve environmental puzzles and escape while an AI Hunter tracks them through the level. I'm the sole developer, designing and building every core system from scratch.
         </p>
-        <p>
-          My York University capstone, <strong>Cattleman's Crossing</strong>, was presented at the <em class="accent">Level Up Showcase 2025</em> in Toronto; I was a systems programmer on the six-person team. I also led a five-person team through a full semester on the story-driven UE5 maze game <strong>HorrorHugger</strong>, from planning to release.
-        </p>
-        <p>
-          I'm comfortable in <strong>Blueprints</strong> and <strong>C++</strong>, fluent in <strong>Git</strong> workflows, and used to coordinating across design, art, and audio. Before that, a year of professional IT support taught me to troubleshoot fast.
-        </p>
+        <div class="timeline">
+          <div class="done"><span class="label">Feb 2026</span><b>Networked prototype</b></div>
+          <div class="done"><span class="label">Mar 2026</span><b>Stable multiplayer</b></div>
+          <div class="now"><span class="label">Now</span><b>Puzzles + polish</b></div>
+          <div><span class="label">Next</span><b>Alpha</b></div>
+        </div>
+      </div>
+      <div class="orca-side">
+        <div class="item">
+          <h4>Adaptive AI Hunter</h4>
+          <p>Written in C++ and Blueprints using behaviour trees for patrol, stalking and pursuit, with spatial-awareness logic. This is the project's main technical and design challenge.</p>
+        </div>
+        <div class="item">
+          <h4>Online co-op</h4>
+          <p>Built on Unreal's replication system, from the first networked prototype through to stable multiplayer and win-condition testing.</p>
+        </div>
+        <div class="item">
+          <h4>Puzzle systems</h4>
+          <p>Environmental puzzles that drive the Runner's escape. These are in active development ahead of the alpha milestone.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="featured" id="featured">
+<section class="block" id="work">
   <div class="wrap">
-
-    <div class="feature-head">
-      <h2>Featured.</h2>
-      <span class="label">/ Capstone — Released Apr 2025</span>
+    <div class="sec-head reveal">
+      <div>
+        <span class="label">Selected work</span>
+        <h2 class="h-display">Released games</h2>
+      </div>
+      <a href="projects.html" class="more">All 8 games →</a>
     </div>
 
-    <a href="https://riordan-palmer.itch.io/cattlemans-crossing" target="_blank" rel="noopener" class="feature-card">
-      <div class="feature-image">
-        <img src="Data/Cattlemenas.png" alt="Cattleman's Crossing — capstone game" loading="lazy" />
-      </div>
-      <div class="feature-body">
-        <div>
-          <div class="feature-meta">
-            <span><span class="mono">Role</span><b>Systems Programmer</b></span>
-            <span><span class="mono">Engine</span><b>Unreal Engine 5</b></span>
-            <span><span class="mono">Team</span><b>6 students</b></span>
-            <span><span class="mono">Released</span><b>April 2025</b></span>
-          </div>
-          <h3 class="feature-title">Cattleman's Crossing</h3>
-          <p class="feature-text">
-            A year-long York University capstone with a six-person team, publicly released on itch.io and presented at the Level Up Showcase 2025 in Toronto. I built core gameplay systems and Blueprint logic, handled final build integration, and managed the team's Git source control across the 12-month cycle.
-          </p>
+    <div class="games">
+      <a class="card wide reveal" href="https://riordan-palmer.itch.io/cattlemans-crossing" target="_blank" rel="noopener">
+        <div class="shot"><span class="tag">Capstone · Level Up 2025</span><img src="Data/web/cattlemans-crossing.jpg" alt="Cattleman's Crossing screenshot" loading="lazy" /></div>
+        <div class="body">
+          <div class="meta"><span class="label red">Systems Programmer</span><span class="label">UE5 · 6-person team · Apr 2025</span></div>
+          <h3>Cattleman's Crossing</h3>
+          <p>A year-long York University capstone, released on itch.io and presented at the Level Up Showcase 2025 in Toronto. I built core gameplay systems and Blueprint logic, handled final build integration, and managed the team's Git workflow for all 12 months.</p>
+          <span class="play">Play on itch.io <span class="arrow">→</span></span>
         </div>
-        <span class="feature-cta">Play on Itch.io <span class="arrow">→</span></span>
-      </div>
-    </a>
-
+      </a>
+      <a class="card reveal" href="https://gamejolt.com/games/HorrorHuggerProl/914352" target="_blank" rel="noopener">
+        <div class="shot"><span class="tag lead">Lead Developer</span><img src="Data/web/horrorhugger.jpg" alt="HorrorHugger screenshot" loading="lazy" /></div>
+        <div class="body">
+          <div class="meta"><span class="label">UE5 · 5-person team</span></div>
+          <h3>HorrorHugger</h3>
+          <p>A story-driven maze game. I led sprint planning, code review and integration, and designed the "hug &amp; shove" combat mechanic.</p>
+          <span class="play">Play on Game Jolt <span class="arrow">→</span></span>
+        </div>
+      </a>
+      <a class="card half reveal" href="https://delyy.itch.io/graverunner" target="_blank" rel="noopener">
+        <div class="shot"><span class="tag">Gameplay Programmer</span><img src="Data/web/grave-runner.jpg" alt="Grave Runner screenshot" loading="lazy" /></div>
+        <div class="body">
+          <div class="meta"><span class="label">UE5 · One-month cycle</span></div>
+          <h3>Grave Runner</h3>
+          <p>Two genre variants, Boss Rush and Boss Run, released from a single codebase. I implemented the gameplay loop for each variant.</p>
+          <span class="play">Play on itch.io <span class="arrow">→</span></span>
+        </div>
+      </a>
+      <a class="card half reveal" href="https://crocostar27.itch.io/walks-on-your-skin-prologue" target="_blank" rel="noopener">
+        <div class="shot"><span class="tag">Solo</span><img src="Data/web/walks-on-your-skin.jpg" alt="Walks on Your Skin: Prologue screenshot" loading="lazy" /></div>
+        <div class="body">
+          <div class="meta"><span class="label">UE5 · Solo developer</span></div>
+          <h3>Walks on Your Skin</h3>
+          <p>A first-person narrative experience. I built the player controller, narrative triggers, ambient audio system and environmental interactions myself.</p>
+          <span class="play">Play on itch.io <span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="tech">
+<section class="block" id="about">
   <div class="wrap">
-    <div class="tech-grid">
-      <div class="section-tag mono">— Stack</div>
-      <div class="tech-blocks">
-
-        <div class="tech-block">
-          <h3>Engines</h3>
-          <ul>
-            <li><b>Unreal Engine 5</b><span>Blueprint + C++</span></li>
-            <li><b>Unity</b><span>C#</span></li>
-            <li><b>Bitsy</b><span>Narrative / pixel</span></li>
-          </ul>
+    <div class="about">
+      <div class="portrait reveal">
+        <span class="frame"></span>
+        <img src="Data/web/tarek.jpg" alt="Portrait of Tarek El Jarab" loading="lazy" />
+      </div>
+      <div class="about-text reveal">
+        <span class="label red">About</span>
+        <h2 class="h-display">Systems first,<br/>players always.</h2>
+        <p>
+          I'm a gameplay programmer and a 2026 graduate of York University's Specialized Honours program in Digital Media, Game Development. I've worked across the full development cycle, from gameplay systems and AI to online multiplayer and public release.
+        </p>
+        <p>
+          I've worked both solo and on teams. On HorrorHugger I led a five-person team through a full semester of production. On Cattleman's Crossing I owned core systems and source control for a six-person capstone team. I also bring a year of professional IT support experience, which taught me to troubleshoot quickly and stay calm under pressure.
+        </p>
+        <p>
+          I'm looking for a <strong>junior gameplay, technical design, or Unreal generalist role</strong> at a Canadian studio, whether on-site, hybrid or remote.
+        </p>
+        <div class="facts">
+          <div><span class="label">Based in</span><b>Toronto, ON</b></div>
+          <div><span class="label">Work eligibility</span><b>Canada (PGWP)</b></div>
+          <div><span class="label">Education</span><b>B.A. Spec. Hons., York University</b></div>
+          <div><span class="label">Languages</span><b>English, Arabic</b></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="tech-block">
-          <h3>Languages</h3>
-          <ul>
-            <li><b>C++</b><span>UE5 native</span></li>
-            <li><b>C#</b><span>Unity gameplay</span></li>
-            <li><b>JavaScript</b><span>Web</span></li>
-            <li><b>HTML / CSS</b><span>Web</span></li>
-          </ul>
-        </div>
-
-        <div class="tech-block">
-          <h3>Tools</h3>
-          <ul>
-            <li><b>Git / GitHub</b><span>Daily driver</span></li>
-            <li><b>Visual Studio</b><span>UE5 C++</span></li>
-            <li><b>VS Code</b><span>General</span></li>
-            <li><b>Blender</b><span>Basic</span></li>
-          </ul>
-        </div>
-
-        <div class="tech-block">
-          <h3>Practice</h3>
-          <ul>
-            <li><b>AI behaviour trees</b><span>Patrol, stalk, pursue</span></li>
-            <li><b>Online multiplayer</b><span>UE replication</span></li>
-            <li><b>Performance profiling</b><span>UE5</span></li>
-            <li><b>Sprint planning</b><span>Agile</span></li>
-            <li><b>Code review</b><span>Peer + lead</span></li>
-            <li><b>Source control</b><span>Branching, merge</span></li>
-                        <li><b>Cross-discipline comms</b><span>Art / audio / design</span></li>
-          </ul>
-        </div>
-
+<section class="block" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="label">Toolkit</span>
+        <h2 class="h-display">Skills</h2>
+      </div>
+    </div>
+    <div class="skills reveal">
+      <div class="skill">
+        <h3>Engines</h3>
+        <ul>
+          <li>Unreal Engine 5<span>Blueprints + C++</span></li>
+          <li>Unity<span>C#</span></li>
+          <li>Bitsy<span>Narrative</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Programming</h3>
+        <ul>
+          <li>C++<span>UE5 gameplay + AI</span></li>
+          <li>C#<span>Unity</span></li>
+          <li>JavaScript<span>Web</span></li>
+          <li>HTML / CSS<span>Web</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Systems</h3>
+        <ul>
+          <li>AI behaviour trees<span>Patrol, stalk, pursue</span></li>
+          <li>Online multiplayer<span>Unreal replication</span></li>
+          <li>Gameplay systems design<span>OOP</span></li>
+          <li>Performance profiling<span>UE5</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Workflow</h3>
+        <ul>
+          <li>Git / GitHub<span>Branching, merges</span></li>
+          <li>Visual Studio · VS Code<span>IDEs</span></li>
+          <li>Blender<span>Basic</span></li>
+          <li>Agile sprints<span>Planning, code review</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <section class="cta">
-  <div class="wrap">
-    <h2>Hiring an Unreal dev?<br/>Let's <em>talk.</em></h2>
-    <div class="cta-actions">
+  <div class="wrap reveal">
+    <h2 class="h-display">Hiring for <span>Unreal?</span></h2>
+    <p>I'd love to hear about your team and your project. I usually reply within 48 hours.</p>
+    <div class="actions">
       <a href="mailto:T2027jk@gmail.com" class="btn primary">T2027jk@gmail.com</a>
       <a href="https://linkedin.com/in/tarek-jarab/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
       <a href="https://github.com/Tcroco27" target="_blank" rel="noopener" class="btn">GitHub</a>
@@ -696,10 +244,11 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Tarek El Jarab</span>
-    <span><a href="https://crocostar27.itch.io/" target="_blank" rel="noopener">itch.io</a> · <a href="https://gamejolt.com/" target="_blank" rel="noopener">Game Jolt</a> · <a href="https://github.com/Tcroco27" target="_blank" rel="noopener">GitHub</a></span>
+    <span class="label">© 2026 Tarek El Jarab · Toronto</span>
+    <span class="label"><a href="https://crocostar27.itch.io/" target="_blank" rel="noopener">itch.io</a> · <a href="https://github.com/Tcroco27" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/tarek-jarab/" target="_blank" rel="noopener">LinkedIn</a></span>
   </div>
 </footer>
 
+<script src="site.js"></script>
 </body>
 </html>
