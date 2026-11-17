@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div id="fade" aria-hidden="true"></div>
 
 <nav>
   <div class="wrap">
@@ -36,12 +37,13 @@
 
 <header class="hero">
   <div class="hero-bg"><img src="Data/web/hero-grave-digger.jpg" alt="" /></div>
+  <div class="flashlight" aria-hidden="true"></div>
   <div class="wrap">
     <div class="kicker reveal">
       <span class="pill">Open to work</span>
       <span class="label">Toronto, ON · Eligible to work in Canada</span>
     </div>
-    <h1 class="h-display reveal">Tarek<span>El Jarab</span></h1>
+    <h1 class="h-display">Tarek<span class="red">El Jarab</span></h1>
     <p class="lede reveal">
       Unreal Engine 5 gameplay programmer working in <strong>C++ and Blueprints</strong>. I have released <strong>eight games</strong> and I'm currently building <strong>Project Orca</strong>, an original co-op horror game with an adaptive AI hunter and online multiplayer.
     </p>
@@ -55,10 +57,10 @@
 
 <div class="wrap">
   <div class="stats">
-    <div class="stat reveal"><div class="num">08</div><span class="label">Released games</span></div>
+    <div class="stat reveal"><div class="num" data-count="8" data-pad="2">08</div><span class="label">Released games</span></div>
     <div class="stat reveal"><div class="num"><em>UE5</em></div><span class="label">C++ + Blueprints</span></div>
-    <div class="stat reveal"><div class="num">05</div><span class="label">Person team led</span></div>
-    <div class="stat reveal"><div class="num">2026</div><span class="label">York U · Game Dev Hons.</span></div>
+    <div class="stat reveal"><div class="num" data-count="5" data-pad="2">05</div><span class="label">Person team led</span></div>
+    <div class="stat reveal"><div class="num" data-count="2026" data-from="2021">2026</div><span class="label">York U · Game Dev Hons.</span></div>
   </div>
 </div>
 
@@ -154,6 +156,8 @@
     </div>
   </div>
 </section>
+
+<div class="marquee" aria-label="Skills"><div class="track"><span>Unreal Engine 5</span><i>✦</i><span>C++</span><i>✦</i><span>Blueprints</span><i>✦</i><span>AI Behaviour Trees</span><i>✦</i><span>Online Multiplayer</span><i>✦</i><span>Replication</span><i>✦</i><span>Gameplay Systems</span><i>✦</i><span>Performance Profiling</span><i>✦</i><span>Unity / C#</span><i>✦</i><span>Git</span><i>✦</i><span>Visual Studio</span><i>✦</i><span>Agile Sprints</span><i>✦</i><span>Unreal Engine 5</span><i>✦</i><span>C++</span><i>✦</i><span>Blueprints</span><i>✦</i><span>AI Behaviour Trees</span><i>✦</i><span>Online Multiplayer</span><i>✦</i><span>Replication</span><i>✦</i><span>Gameplay Systems</span><i>✦</i><span>Performance Profiling</span><i>✦</i><span>Unity / C#</span><i>✦</i><span>Git</span><i>✦</i><span>Visual Studio</span><i>✦</i><span>Agile Sprints</span><i>✦</i></div></div>
 
 <section class="block" id="about">
   <div class="wrap">
